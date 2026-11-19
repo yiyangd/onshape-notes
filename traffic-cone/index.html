@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f7f3">
+<meta name="description" content="Build a hollow traffic cone in Onshape with bilingual steps and visual demonstrations. 用中英双语步骤和动图学习交通锥的放样、抽壳与旋转。">
+<title>Traffic Cone · 交通锥 | Onshape Notes</title>
+<style>
+:root{color-scheme:light;--ink:#18363a;--muted:#49666a;--paper:#f4f7f5;--line:#cbd9d5;--teal:#075957;--orange:#a0430e;--white:#fff;font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.57}
+*{box-sizing:border-box}body{margin:0}a{color:var(--teal);text-underline-offset:.19em}a:hover{text-decoration-thickness:2px}a:focus-visible,input:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #126c98;outline-offset:3px}
+[hidden]{display:none!important}.site,.wrap{max-width:1220px;margin-inline:auto;padding-inline:clamp(1rem,4vw,3.4rem)}
+.mast{border-bottom:1px solid var(--line);background:var(--white)}.site{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.76rem}.brand{font-size:1.02rem;font-weight:700;letter-spacing:-.025em;color:var(--ink)}.lessons{display:flex;flex-wrap:wrap;column-gap:1rem;row-gap:.13rem;font-size:.9rem}.lessons [aria-current]{color:var(--orange);font-weight:650}
+main{padding-bottom:3.5rem}.intro{padding-block:clamp(1.6rem,4.2vw,3.1rem) 1.5rem}.intro h1{font-size:clamp(2.15rem,6vw,3.55rem);letter-spacing:-.055em;line-height:1.02;margin:0 0 .85rem}.intro h1 span{display:inline-block;margin-inline-start:.32em;font-size:.61em;color:var(--muted);letter-spacing:.005em}
+.intro p{margin:.12rem 0;max-width:82ch}.translation{color:#385358}.intro-links{margin-top:.8rem!important;display:flex;flex-wrap:wrap;gap:.65rem 1.3rem;font-size:.95rem}
+.layout{display:grid;grid-template-columns:minmax(200px,250px) minmax(0,1fr);gap:clamp(1.25rem,3.8vw,3.25rem);align-items:start}.tools{position:sticky;top:1rem;max-height:calc(100vh - 2rem);overflow-y:auto;padding:.15rem .3rem .5rem}.tools label{display:block;font-size:.91rem;font-weight:650;margin-bottom:.35rem}.search-line{display:flex;gap:.35rem}.search-line input{flex:1;min-width:0;border:1px solid #799799;border-radius:.29rem;padding:.55rem .6rem;background:white;color:var(--ink);font:inherit;font-size:.9rem}.search-line button{border:1px solid #a5bcb8;border-radius:.29rem;background:white;color:var(--teal);font:inherit;font-size:.85rem;padding:.2rem .42rem;cursor:pointer}.search-status{display:block;font-size:.83rem;margin:.2rem 0 .65rem;color:var(--muted)}
+.toc{margin-top:.5rem}.toc summary{font-weight:650;cursor:pointer;padding:.36rem 0}.toc ol{padding:0;margin:.3rem 0;list-style:none}.toc li{border-bottom:1px solid #dbe4df}.toc li:last-child{border-bottom:0}.toc a{display:grid;grid-template-columns:3.15rem 1fr;gap:.35rem;padding:.42rem 0;text-decoration:none;line-height:1.29}.toc a:hover{text-decoration:underline}.toc small{font-size:.82rem;color:var(--orange);font-variant-numeric:tabular-nums;padding-top:.06rem}.toc a span{font-size:.93rem}.toc a span[lang]{display:block;color:var(--muted);font-size:.83rem;margin-top:.08rem}
+.stage{margin-bottom:2.4rem;scroll-margin-top:.6rem}.stage-head{display:flex;align-items:end;justify-content:space-between;gap:.5rem;border-bottom:2px solid #72918c;padding:.15rem 0 .65rem}.stage-head p{margin:0;color:var(--orange);font-size:.83rem;font-weight:650;font-variant-numeric:tabular-nums}.stage h2{margin:.18rem 0 0;font-size:clamp(1.3rem,3vw,1.75rem);line-height:1.23;font-weight:680;letter-spacing:-.027em}.stage h2 span{display:block;font-size:.72em;color:var(--muted);font-weight:540;letter-spacing:0;margin-top:.15rem}.stage-head>a{font-size:.77rem;line-height:1.35;text-align:right;white-space:nowrap}.stage-head>a span{display:block}
+.step{padding:clamp(.85rem,2.8vw,1.4rem);border:1px solid var(--line);background:var(--white);border-radius:.5rem;margin-top:.8rem;scroll-margin-top:.65rem}.step:target{border-color:#af561f;box-shadow:inset .18rem 0 #af561f}.step h3{display:flex;align-items:start;gap:.65rem;margin:0 0 .63rem;font-size:clamp(1.12rem,2.5vw,1.32rem);line-height:1.25;letter-spacing:-.013em}.number{color:var(--orange);font-variant-numeric:tabular-nums;text-decoration:none}.number:hover{text-decoration:underline}.step h3 [lang]{font-size:.82em;line-height:1.45;font-weight:580;letter-spacing:0;color:var(--muted);display:block;margin-top:.16rem}.step p{margin:.36rem 0;font-size:1rem;overflow-wrap:anywhere}.step p.translation{margin-top:.45rem}.step strong{font-weight:650}
+figure{margin:1rem 0 0}.media{display:block}.media img{display:block;width:100%;height:auto;border:1px solid #d5e0dc;background:#f7f8f6;border-radius:.3rem}figcaption{display:flex;align-items:start;justify-content:space-between;gap:.65rem;font-size:.78rem;line-height:1.35;margin-top:.38rem;color:var(--muted)}figcaption a{white-space:nowrap}#no-matches{margin:0;padding:.8rem 1rem;border:1px solid var(--line);border-radius:.35rem}
+@media(max-width:760px){.layout{grid-template-columns:1fr;gap:.85rem}.tools{position:static;max-height:none;overflow:visible;padding:.75rem .8rem;border:1px solid var(--line);border-radius:.4rem}.toc ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 .8rem}.intro{padding-bottom:1rem}.site{align-items:flex-start}.lessons{justify-content:flex-end}.search-status:empty{margin:0}.stage-head{padding-top:.3rem}}
+@media(max-width:460px){.site{flex-wrap:wrap;row-gap:.25rem}.lessons{font-size:.86rem}.intro h1 span{display:block;margin:.25rem 0 0}.toc ol{display:block}.search-line input{font-size:1rem}.wrap,.site{padding-inline:.85rem}figcaption{font-size:.75rem}}
+@media print{body{background:white}.mast,.tools,.intro-links,.stage-head>a,figcaption a{display:none}.wrap{max-width:none;padding:0}.layout{display:block}.step{break-inside:avoid}.stage-head{break-after:avoid}.media img{max-height:60mm;object-fit:contain}.step:target{box-shadow:none;border-color:var(--line)}}
+</style>
+<style>
+.visual summary,.diagram summary{cursor:pointer;color:var(--teal);font-size:.85rem;margin:.2rem 0 .4rem}.diagram{margin-top:.8rem}.diagram figure{margin:.35rem 0 0}.diagram img{width:100%;height:auto;display:block}.diagram figcaption{display:block}.diagram figcaption span{display:block}.step>figure>figcaption{justify-content:flex-end}
+</style>
+</head>
+<body>
+<header class="mast"><div class="site"><span class="brand">Onshape Notes</span><nav class="lessons" aria-label="Lessons · 课程"><a href="../">Pyramid · <span lang="zh-CN">四棱锥</span></a><span aria-current="page">Traffic Cone · <span lang="zh-CN">交通锥</span></span></nav></div></header>
+<main class="wrap">
+<header class="intro">
+<h1>Traffic Cone<span lang="zh-CN">交通锥</span></h1>
+<p>Connect two circles with <strong>Loft</strong>, open both ends with <strong>Shell</strong>, then add the round base with <strong>Revolve</strong>. Lengths are in inches.</p>
+<p class="translation" lang="zh-CN">用 <strong>Loft（放样）</strong>连接两个圆，用 <strong>Shell（抽壳）</strong>打开两端，再用 <strong>Revolve（旋转）</strong>做出圆形底座。长度均使用英寸。</p>
+<p class="intro-links"><a href="#step-55">See the finished cone · <span lang="zh-CN">先看成品</span></a><a href="#step-56">See the feature order · <span lang="zh-CN">查看特征顺序</span></a></p>
+</header>
+<div class="layout">
+<aside class="tools" id="contents" aria-label="Find a step · 查找步骤">
+<div id="search-tools" hidden><label for="search">Find a step · <span lang="zh-CN">查找步骤</span></label><div class="search-line"><input id="search" type="search" inputmode="search" placeholder="08, Loft, 壁厚…"><button id="clear" type="button" hidden>Clear · 清除</button></div><output class="search-status" id="status" for="search" aria-live="polite"></output></div>
+<details class="toc" open><summary>Stages · <span lang="zh-CN">阶段目录</span></summary><nav aria-label="Stages · 阶段"><ol>
+<li><a href="#stage-01"><small>01–04</small><span>Document and units<span lang="zh-CN">文档与单位</span></span></a></li>
+<li><a href="#stage-05"><small>05–10</small><span>Lower circle<span lang="zh-CN">底部圆</span></span></a></li>
+<li><a href="#stage-11"><small>11–19</small><span>Offset plane and upper circle<span lang="zh-CN">偏移平面与顶部圆</span></span></a></li>
+<li><a href="#stage-20"><small>20–23</small><span>Loft the cone<span lang="zh-CN">放样出锥体</span></span></a></li>
+<li><a href="#stage-24"><small>24–30</small><span>Shell the wall<span lang="zh-CN">抽壳并检查开口</span></span></a></li>
+<li><a href="#stage-31"><small>31–36</small><span>Find the cone’s outline<span lang="zh-CN">取得锥壁的相交线</span></span></a></li>
+<li><a href="#stage-37"><small>37–42</small><span>Sketch the base flange<span lang="zh-CN">绘制底缘剖面</span></span></a></li>
+<li><a href="#stage-43"><small>43–51</small><span>Revolve and measure<span lang="zh-CN">旋转并测量底缘</span></span></a></li>
+<li><a href="#stage-52"><small>52–56</small><span>Color and final checks<span lang="zh-CN">着色与成品检查</span></span></a></li>
+</ol></nav></details>
+</aside>
+<div id="lesson">
+<p id="no-matches" hidden>No matching steps. Try a step number or a tool name.<br><span lang="zh-CN">没有匹配的步骤。可以输入步骤编号或工具名称。</span></p>
+<section class="stage" id="stage-01" aria-labelledby="title-01"><header class="stage-head"><div><p>Steps 01–04 · 第 01–04 步</p><h2 id="title-01">Document and units<span lang="zh-CN">文档与单位</span></h2></div><a href="#contents">Contents ↑<span lang="zh-CN">返回目录</span></a></header>
+<article id="step-01" class="step" data-number="1">
+  <h3><a class="number" href="#step-01" aria-label="Step 01 · 第 01 步">01</a><span>Open the Documents page<span lang="zh-CN">从文档页开始</span></span></h3>
+  <p>On your Onshape Documents page, click <strong>Create</strong>. Choose <strong>Document…</strong> from the menu.</p><p lang="zh-CN" class="translation">在 Onshape 文档页点击 <strong>Create</strong>（创建），然后在菜单中选择 <strong>Document…</strong>（文档）。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/01.gif" target="_blank" rel="noopener"><img src="media/01.gif" width="800" height="450" alt="Open the Documents page · 从文档页开始" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/01.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 01 · 打开第 01 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-02" class="step" data-number="2">
+  <h3><a class="number" href="#step-02" aria-label="Step 02 · 第 02 步">02</a><span>Name your document<span lang="zh-CN">命名交通锥文档</span></span></h3>
+  <p>Click the <strong>Name</strong> field, type Traffic Cone, and click <strong>Create</strong>. Keep the default <strong>Part Studio 1</strong> tab that opens at the bottom.</p><p lang="zh-CN" class="translation">点击名称 <strong>Name</strong> 输入框，输入 Traffic Cone，再点击创建 <strong>Create</strong>。打开后，保留底部默认的 <strong>Part Studio 1</strong> 标签。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/02.gif" target="_blank" rel="noopener"><img src="media/02.gif" width="800" height="450" alt="Name your document · 命名交通锥文档" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/02.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 02 · 打开第 02 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-03" class="step" data-number="3">
+  <h3><a class="number" href="#step-03" aria-label="Step 03 · 第 03 步">03</a><span>Open Workspace units<span lang="zh-CN">打开工作区单位设置</span></span></h3>
+  <p>In the top left, click the three-line <strong>Document menu</strong> between the Onshape logo and the document name. Click <strong>Workspace units</strong>… in the menu.</p><p lang="zh-CN" class="translation">在左上角，点击 Onshape 标志与文档名称之间的三横线文档菜单 <strong>Document menu</strong>。在菜单中点击工作区单位 <strong>Workspace units</strong>…。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/03.gif" target="_blank" rel="noopener"><img src="media/03.gif" width="800" height="450" alt="Open Workspace units · 打开工作区单位设置" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/03.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 03 · 打开第 03 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-04" class="step" data-number="4">
+  <h3><a class="number" href="#step-04" aria-label="Step 04 · 第 04 步">04</a><span>Set the length unit to inches<span lang="zh-CN">将长度单位设为英寸</span></span></h3>
+  <p>Under <strong>Length</strong>, open <strong>Length default unit</strong> and choose <strong>Inch</strong>. If it already reads <strong>Inch</strong>, leave it selected. Click the green checkmark.</p><p lang="zh-CN" class="translation">在 <strong>Length</strong>（长度）下找到 <strong>Length default unit</strong>（默认长度单位）。如果显示其他单位，打开下拉框并选 <strong>Inch</strong>（英寸）。确认已显示 <strong>Inch</strong> 后，点击绿色对勾。</p>
+  <figure><details class="visual" open><summary>Model or settings check · 对照模型或设置</summary><a class="media" href="media/04.gif" target="_blank" rel="noopener"><img src="media/04.gif" width="800" height="450" alt="Set the length unit to inches · 将长度单位设为英寸" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/04.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 04 · 打开第 04 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+</section>
+<section class="stage" id="stage-05" aria-labelledby="title-05"><header class="stage-head"><div><p>Steps 05–10 · 第 05–10 步</p><h2 id="title-05">Lower circle<span lang="zh-CN">底部圆</span></h2></div><a href="#contents">Contents ↑<span lang="zh-CN">返回目录</span></a></header>
+<article id="step-05" class="step" data-number="5">
+  <h3><a class="number" href="#step-05" aria-label="Step 05 · 第 05 步">05</a><span>Start a sketch on Top<span lang="zh-CN">在 Top 面上新建草图</span></span></h3>
+  <p>In the <strong>Features</strong> list on the left, click the <strong>Top</strong> row under <strong>Default geometry</strong>. Click <strong>Sketch</strong>, the pencil button on the toolbar. Confirm that <strong>Sketch plane</strong> says <strong>Top plane</strong>.</p><p lang="zh-CN" class="translation">在左侧特征 <strong>Features</strong> 列表中，点击默认几何 <strong>Default geometry</strong> 下的上视平面 <strong>Top</strong>。点击工具栏上的铅笔按钮草图 <strong>Sketch</strong>，确认草图平面 <strong>Sketch plane</strong> 显示 <strong>Top plane</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/05.gif" target="_blank" rel="noopener"><img src="media/05.gif" width="800" height="450" alt="Start a sketch on Top · 在 Top 面上新建草图" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/05.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 05 · 打开第 05 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-06" class="step" data-number="6">
+  <h3><a class="number" href="#step-06" aria-label="Step 06 · 第 06 步">06</a><span>Face the sketch and find its origin<span lang="zh-CN">正对草图并找到原点</span></span></h3>
+  <p>Click the face labeled <strong>Top</strong> on the view cube in the upper right. Wait for the view to settle. The sketch origin is the small point at the center of the drawing area.</p><p lang="zh-CN" class="translation">点击右上角视图立方体上标有 <strong>Top</strong> 的面。等视角转动结束后，找到画图区中央的小点，它就是草图原点。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/06.gif" target="_blank" rel="noopener"><img src="media/06.gif" width="800" height="450" alt="Face the sketch and find its origin · 正对草图并找到原点" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/06.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 06 · 打开第 06 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-07" class="step" data-number="7">
+  <h3><a class="number" href="#step-07" aria-label="Step 07 · 第 07 步">07</a><span>Draw a circle from its center<span lang="zh-CN">用圆心圆工具画底部圆</span></span></h3>
+  <p>While editing <strong>Sketch 1</strong>, find the ring icon in the sketch toolbar. Hover over it to look for <strong>Center point circle</strong>. If the circle group shows a different tool, open its small arrow and choose <strong>Center point circle</strong>. Click the sketch origin once, move down and to the right, and click again to place the circle edge. Press <strong>Esc</strong>. You will set the exact size in step 08.</p><p lang="zh-CN" class="translation">保持在 <strong>Sketch 1</strong> 的编辑界面。在草图工具栏找到圆环图标，停住鼠标查看名称 <strong>Center point circle</strong>（圆心圆）。如果圆工具组显示另一种画圆方式，点击旁边的小箭头，选择 <strong>Center point circle</strong>。先单击草图原点，再把鼠标向右下移动并单击一次，放下圆周。按 <strong>Esc</strong>。第 08 步再输入精确尺寸。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/07.gif" target="_blank" rel="noopener"><img src="media/07.gif" width="800" height="450" alt="Draw a circle from its center · 用圆心圆工具画底部圆" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/07.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 07 · 打开第 07 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-08" class="step" data-number="8">
+  <h3><a class="number" href="#step-08" aria-label="Step 08 · 第 08 步">08</a><span>Set the lower diameter to 4 in<span lang="zh-CN">将底部圆直径设为 4 英寸</span></span></h3>
+  <p>While the sketch is open, click <strong>Dimension</strong> on the sketch toolbar, or press D. Click the circle’s outline once. Move into empty space outside the circle and click to place the diameter label. Type <strong>4 in</strong> in the value box and press <strong>Enter</strong>. The diameter symbol Ø should appear before the number.</p><p lang="zh-CN" class="translation">在草图编辑界面，点击工具栏上的 <strong>Dimension</strong>（尺寸），也可以按 D。单击圆周，再把鼠标移到圆外空白处单击，放下直径标注。在数值框中输入 <strong>4 in</strong>，按 <strong>Enter</strong>。数字前应出现直径符号 Ø。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/08.gif" target="_blank" rel="noopener"><img src="media/08.gif" width="800" height="450" alt="Set the lower diameter to 4 in · 将底部圆直径设为 4 英寸" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/08.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 08 · 打开第 08 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-09" class="step" data-number="9">
+  <h3><a class="number" href="#step-09" aria-label="Step 09 · 第 09 步">09</a><span>If the dimension tool picks a plane<span lang="zh-CN">如果标注时误选了平面</span></span></h3>
+  <p>If Onshape says “<strong>A dimension cannot be created between these items</strong>,” press <strong>Esc</strong>. Hover over <strong>Top</strong>, <strong>Front</strong> and <strong>Right</strong> in the feature list. Click the eye beside each visible plane to hide it, or press P to toggle the planes together as shown. Click <strong>Dimension</strong> again, click the circle’s outline and finish step 08. If you already see <strong>Ø4</strong>, continue to step 10.</p><p lang="zh-CN" class="translation">如果出现 “<strong>A dimension cannot be created between these items</strong>”，按 <strong>Esc</strong>。将鼠标依次停在左侧 <strong>Top</strong>、<strong>Front</strong> 和 <strong>Right</strong> 平面行，点击可见平面旁的眼睛图标将其隐藏。也可像动图中那样按 P，一起切换平面显示。重新选择 <strong>Dimension</strong>，点中圆周，再完成第 08 步的标注。已经看到 <strong>Ø4</strong> 时，直接继续第 10 步。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/09.gif" target="_blank" rel="noopener"><img src="media/09.gif" width="800" height="450" alt="If the dimension tool picks a plane · 如果标注时误选了平面" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/09.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 09 · 打开第 09 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-10" class="step" data-number="10">
+  <h3><a class="number" href="#step-10" aria-label="Step 10 · 第 10 步">10</a><span>Finish Sketch 1<span lang="zh-CN">完成底部圆草图</span></span></h3>
+  <p>Press <strong>Esc</strong> to leave <strong>Dimension</strong>. If the label is off screen, scroll back one notch to zoom out. Check that the disk has a shaded interior and the dimension reads <strong>Ø4</strong>. Click the green checkmark to finish <strong>Sketch 1</strong>.</p><p lang="zh-CN" class="translation">按 <strong>Esc</strong> 退出 <strong>Dimension</strong>。如果尺寸标注超出屏幕，可向后滚动滚轮一格缩小视图。确认圆内有填充，直径标注为 <strong>Ø4</strong>，然后点击绿色对勾完成 <strong>Sketch 1</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/10.gif" target="_blank" rel="noopener"><img src="media/10.gif" width="800" height="450" alt="Finish Sketch 1 · 完成底部圆草图" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/10.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 10 · 打开第 10 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+</section>
+<section class="stage" id="stage-11" aria-labelledby="title-11"><header class="stage-head"><div><p>Steps 11–19 · 第 11–19 步</p><h2 id="title-11">Offset plane and upper circle<span lang="zh-CN">偏移平面与顶部圆</span></h2></div><a href="#contents">Contents ↑<span lang="zh-CN">返回目录</span></a></header>
+<article id="step-11" class="step" data-number="11">
+  <h3><a class="number" href="#step-11" aria-label="Step 11 · 第 11 步">11</a><span>Switch to an isometric view<span lang="zh-CN">切换到等轴视图</span></span></h3>
+  <p>Click the small arrow beside the <strong>Camera and render options</strong> icon below the view cube. Click <strong>Isometric</strong> to see the direction in which the plane will move.</p><p lang="zh-CN" class="translation">点击视图立方体下方相机与渲染选项 <strong>Camera and render options</strong> 图标旁的小箭头，再点击等轴视图 <strong>Isometric</strong>，便于观察平面的偏移方向。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/11.gif" target="_blank" rel="noopener"><img src="media/11.gif" width="800" height="450" alt="Switch to an isometric view · 切换到等轴视图" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/11.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 11 · 打开第 11 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-12" class="step" data-number="12">
+  <h3><a class="number" href="#step-12" aria-label="Step 12 · 第 12 步">12</a><span>Start an offset plane from Top<span lang="zh-CN">以 Top 为基准新建偏移平面</span></span></h3>
+  <p>Click the <strong>Top</strong> row under <strong>Default geometry</strong>, even if its eye icon indicates that the plane is hidden. Click <strong>Plane</strong> in the top toolbar. If the toolbar is crowded, click <strong>Search tools</strong>, type <strong>Plane</strong>, and click the <strong>Plane</strong> result.</p><p lang="zh-CN" class="translation">点击 <strong>Default geometry</strong> 下的 <strong>Top</strong> 行。即使眼睛图标表示该平面已隐藏，仍可从列表中选择它。点击上方工具栏的平面 <strong>Plane</strong>。如果工具栏中找不到，点击搜索工具 <strong>Search tools</strong>，输入 <strong>Plane</strong>，再点击搜索结果中的 <strong>Plane</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/12.gif" target="_blank" rel="noopener"><img src="media/12.gif" width="800" height="450" alt="Start an offset plane from Top · 以 Top 为基准新建偏移平面" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/12.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 12 · 打开第 12 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-13" class="step" data-number="13">
+  <h3><a class="number" href="#step-13" aria-label="Step 13 · 第 13 步">13</a><span>Set the offset to 12 in<span lang="zh-CN">输入 12 英寸的偏移距离</span></span></h3>
+  <p>In the <strong>Plane 1</strong> dialog, check that <strong>Entities</strong> contains <strong>Top plane</strong> and the type is <strong>Offset</strong>. Click <strong>Offset distance</strong>, replace the existing value with <strong>12 in</strong>, and press <strong>Tab</strong> to apply it.</p><p lang="zh-CN" class="translation">在 <strong>Plane 1</strong> 对话框中，确认对象 <strong>Entities</strong> 已列出 <strong>Top plane</strong>，类型为偏移 <strong>Offset</strong>。点击偏移距离 <strong>Offset distance</strong>，用 <strong>12 in</strong> 替换原值，按 <strong>Tab</strong> 应用。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/13.gif" target="_blank" rel="noopener"><img src="media/13.gif" width="800" height="450" alt="Set the offset to 12 in · 输入 12 英寸的偏移距离" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/13.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 13 · 打开第 13 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-14" class="step" data-number="14">
+  <h3><a class="number" href="#step-14" aria-label="Step 14 · 第 14 步">14</a><span>Check that Plane 1 is above Top<span lang="zh-CN">确认 Plane 1 在 Top 上方</span></span></h3>
+  <p>In the angled view, find the <strong>Plane 1</strong> preview. It should be <strong>12 in</strong> above <strong>Top</strong> and the lower circle. If it appears below them, click <strong>Opposite direction</strong>, the arrow beside <strong>Offset distance</strong>. Leave <strong>Flip normal</strong> unchecked. When the preview is above the lower circle, click the green checkmark.</p><p lang="zh-CN" class="translation">在等轴视图中看 <strong>Plane 1</strong> 的预览：它应在 <strong>Top</strong> 平面与底部圆上方 <strong>12 in</strong> 处。如果预览在下方，点击 <strong>Offset distance</strong> 旁的反向箭头 <strong>Opposite direction</strong>。保持 <strong>Flip normal</strong>（翻转法向）未勾选。确认预览已在底部圆上方，再点击绿色对勾。</p>
+  <figure><details class="visual" open><summary>Model or settings check · 对照模型或设置</summary><a class="media" href="media/14.gif" target="_blank" rel="noopener"><img src="media/14.gif" width="800" height="450" alt="Check that Plane 1 is above Top · 确认 Plane 1 在 Top 上方" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/14.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 14 · 打开第 14 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-15" class="step" data-number="15">
+  <h3><a class="number" href="#step-15" aria-label="Step 15 · 第 15 步">15</a><span>Bring both levels into view<span lang="zh-CN">让两个高度都显示在窗口内</span></span></h3>
+  <p>If <strong>Plane 1</strong> is outside the window, open <strong>Camera and render options</strong> under the view cube and choose <strong>Zoom to fit</strong>. You can also press F. When the upper plane and the lower circle are both visible, continue to step 16.</p><p lang="zh-CN" class="translation">如果 <strong>Plane 1</strong> 超出窗口，打开视图立方体下方的 <strong>Camera and render options</strong>，点击 <strong>Zoom to fit</strong>（缩放至合适大小），也可以按 F。看得到上方平面和下方圆时，就可以继续第 16 步。</p>
+  <figure><details class="visual" open><summary>View-menu detail · 录屏中的菜单位置</summary><a class="media" href="media/15.gif" target="_blank" rel="noopener"><img src="media/15.gif" width="800" height="450" alt="Bring both levels into view · 让两个高度都显示在窗口内" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/15.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 15 · 打开第 15 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-16" class="step" data-number="16">
+  <h3><a class="number" href="#step-16" aria-label="Step 16 · 第 16 步">16</a><span>Start Sketch 2 on Plane 1<span lang="zh-CN">在 Plane 1 上新建第二个草图</span></span></h3>
+  <p>Click <strong>Plane 1</strong> in the feature list, then click <strong>Sketch</strong>. Confirm that <strong>Sketch plane</strong> says <strong>Plane 1</strong>. Click the <strong>Top</strong> face of the view cube for a straight-on view.</p><p lang="zh-CN" class="translation">在特征列表中点击 <strong>Plane 1</strong>，再点击草图 <strong>Sketch</strong>。确认 <strong>Sketch plane</strong> 显示 <strong>Plane 1</strong>。点击视图立方体的 <strong>Top</strong> 面，正对草图观察。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/16.gif" target="_blank" rel="noopener"><img src="media/16.gif" width="800" height="450" alt="Start Sketch 2 on Plane 1 · 在 Plane 1 上新建第二个草图" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/16.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 16 · 打开第 16 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-17" class="step" data-number="17">
+  <h3><a class="number" href="#step-17" aria-label="Step 17 · 第 17 步">17</a><span>Draw the upper circle on the same axis<span lang="zh-CN">在同一中心轴上画顶部圆</span></span></h3>
+  <p>Click <strong>Center point circle</strong>. Click the point at the center of the sketch, directly above the lower circle's center. Move down and to the right, click to place the rough circle edge, and press <strong>Esc</strong>.</p><p lang="zh-CN" class="translation">点击圆心圆 <strong>Center point circle</strong>。先点击草图中央的点，使它与下方圆的圆心上下对齐。向右下方移动鼠标，再点击一次画出大致圆周，按 <strong>Esc</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/17.gif" target="_blank" rel="noopener"><img src="media/17.gif" width="800" height="450" alt="Draw the upper circle on the same axis · 在同一中心轴上画顶部圆" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/17.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 17 · 打开第 17 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-18" class="step" data-number="18">
+  <h3><a class="number" href="#step-18" aria-label="Step 18 · 第 18 步">18</a><span>Set the upper diameter to 1 in<span lang="zh-CN">将顶部圆直径设为 1 英寸</span></span></h3>
+  <p>Click <strong>Dimension</strong> and click the new small circle's boundary. Click blank space to its right, type <strong>1 in</strong>, and press <strong>Enter</strong>. Press <strong>Esc</strong>.</p><p lang="zh-CN" class="translation">点击尺寸 <strong>Dimension</strong>，再点击新画小圆的圆周。在它右侧的空白处点击放置标注，输入 <strong>1 in</strong>，按 <strong>Enter</strong>，再按 <strong>Esc</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/18.gif" target="_blank" rel="noopener"><img src="media/18.gif" width="800" height="450" alt="Set the upper diameter to 1 in · 将顶部圆直径设为 1 英寸" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/18.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 18 · 打开第 18 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-19" class="step" data-number="19">
+  <h3><a class="number" href="#step-19" aria-label="Step 19 · 第 19 步">19</a><span>Check the two centers and finish the sketch<span lang="zh-CN">检查两圆同心并完成草图</span></span></h3>
+  <p>Check that the new circle is labeled <strong>Ø1</strong>. When viewed from <strong>Top</strong>, it should sit concentrically inside the larger <strong>Ø4</strong> circle. Click the green checkmark to save <strong>Sketch 2</strong>.</p><p lang="zh-CN" class="translation">确认小圆标注为 <strong>Ø1</strong>。从 <strong>Top</strong> 观察，它应与外面较大的 <strong>Ø4</strong> 圆同心。点击绿色勾保存 <strong>Sketch 2</strong>。</p>
+  <figure><details class="visual" open><summary>Model or settings check · 对照模型或设置</summary><a class="media" href="media/19.gif" target="_blank" rel="noopener"><img src="media/19.gif" width="800" height="450" alt="Check the two centers and finish the sketch · 检查两圆同心并完成草图" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/19.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 19 · 打开第 19 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+</section>
+<section class="stage" id="stage-20" aria-labelledby="title-20"><header class="stage-head"><div><p>Steps 20–23 · 第 20–23 步</p><h2 id="title-20">Loft the cone<span lang="zh-CN">放样出锥体</span></h2></div><a href="#contents">Contents ↑<span lang="zh-CN">返回目录</span></a></header>
+<article id="step-20" class="step" data-number="20">
+  <h3><a class="number" href="#step-20" aria-label="Step 20 · 第 20 步">20</a><span>View both profiles at once<span lang="zh-CN">在斜视图中同时看到两个圆</span></span></h3>
+  <p>Open <strong>Camera and render options</strong> under the view cube. Click <strong>Isometric</strong>. Open the same menu again and choose <strong>Zoom to fit</strong>, or press F. You should see the large lower circle and the small upper circle at different heights.</p><p lang="zh-CN" class="translation">打开视图立方体下方的 <strong>Camera and render options</strong>，点击 <strong>Isometric</strong>。再次打开同一菜单，点击 <strong>Zoom to fit</strong>，也可以按 F。应能同时看到两个高度不同的圆，下大上小。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/20.gif" target="_blank" rel="noopener"><img src="media/20.gif" width="800" height="450" alt="View both profiles at once · 在斜视图中同时看到两个圆" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/20.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 20 · 打开第 20 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-21" class="step" data-number="21">
+  <h3><a class="number" href="#step-21" aria-label="Step 21 · 第 21 步">21</a><span>Open Loft and select Solid and New<span lang="zh-CN">打开放样并选择 Solid、New</span></span></h3>
+  <p>Click <strong>Search tools</strong> on the top toolbar, type <strong>Loft</strong>, and click the <strong>Loft</strong> result. Click <strong>Solid</strong> and <strong>New</strong> in the dialog.</p><p lang="zh-CN" class="translation">点击上方工具栏的搜索工具 <strong>Search tools</strong>，输入 <strong>Loft</strong>，点击搜索结果中的放样 <strong>Loft</strong>。在对话框中点击实体 <strong>Solid</strong> 和新建 <strong>New</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/21.gif" target="_blank" rel="noopener"><img src="media/21.gif" width="800" height="450" alt="Open Loft and select Solid and New · 打开放样并选择 Solid、New" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/21.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 21 · 打开第 21 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-22" class="step" data-number="22">
+  <h3><a class="number" href="#step-22" aria-label="Step 22 · 第 22 步">22</a><span>Select the lower disk then the upper disk<span lang="zh-CN">先选下方大圆面，再选上方小圆面</span></span></h3>
+  <p>Click <strong>Profiles</strong>. Click inside the shaded area of the large lower circle, away from its center and outline. Then click inside the small upper circle. Read the rows from top to bottom. They should say <strong>Face of Sketch 1</strong> and <strong>Face of Sketch 2</strong>.</p><p lang="zh-CN" class="translation">点击 <strong>Profiles</strong>（截面）。先点击下方大圆的填充区域，避开圆心和圆周。再点击上方小圆的填充区域。核对列表从上到下依次显示 <strong>Face of Sketch 1</strong> 和 <strong>Face of Sketch 2</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/22.gif" target="_blank" rel="noopener"><img src="media/22.gif" width="800" height="450" alt="Select the lower disk then the upper disk · 先选下方大圆面，再选上方小圆面" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/22.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 22 · 打开第 22 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-23" class="step" data-number="23">
+  <h3><a class="number" href="#step-23" aria-label="Step 23 · 第 23 步">23</a><span>Check the taper and accept the Loft<span lang="zh-CN">检查锥度并确认放样</span></span></h3>
+  <p>Under <strong>End conditions</strong>, keep both <strong>Start profile condition</strong> and <strong>End profile condition</strong> at <strong>None</strong>. Leave the guides and path unchecked. Look at the outline from the side. Each side should run straight from the wide bottom to the narrow top, with no bulge or inward dip. <strong>Parts (1)</strong> in the lower left means Onshape counts one solid part. Click the green checkmark to save <strong>Loft 1</strong>.</p><p lang="zh-CN" class="translation">在 <strong>End conditions</strong> 中，让 <strong>Start profile condition</strong> 与 <strong>End profile condition</strong> 都保持 <strong>None</strong>，引导线和路径保持未勾选。观察锥体的侧轮廓：两侧应由宽底向窄顶沿直线均匀收窄，途中没有鼓包或凹陷。左下角 <strong>Parts (1)</strong> 表示模型里有一个实体零件。确认后点击绿色对勾，保存 <strong>Loft 1</strong>。</p>
+  <figure><details class="visual" open><summary>Model or settings check · 对照模型或设置</summary><a class="media" href="media/23.gif" target="_blank" rel="noopener"><img src="media/23.gif" width="800" height="450" alt="Check the taper and accept the Loft · 检查锥度并确认放样" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/23.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 23 · 打开第 23 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+</section>
+<section class="stage" id="stage-24" aria-labelledby="title-24"><header class="stage-head"><div><p>Steps 24–30 · 第 24–30 步</p><h2 id="title-24">Shell the wall<span lang="zh-CN">抽壳并检查开口</span></h2></div><a href="#contents">Contents ↑<span lang="zh-CN">返回目录</span></a></header>
+<article id="step-24" class="step" data-number="24">
+  <h3><a class="number" href="#step-24" aria-label="Step 24 · 第 24 步">24</a><span>Open Shell and activate Faces to remove<span lang="zh-CN">打开抽壳并激活待移除面</span></span></h3>
+  <p>Click <strong>Search tools</strong>, type <strong>Shell</strong>, and click the <strong>Shell</strong> result. Leave <strong>Hollow</strong> unchecked, then click <strong>Faces to remove</strong>.</p><p lang="zh-CN" class="translation">点击 <strong>Search tools</strong>，输入 <strong>Shell</strong>，点击搜索结果中的抽壳 <strong>Shell</strong>。保持封闭空腔 <strong>Hollow</strong> 未勾选，再点击待移除面 <strong>Faces to remove</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/24.gif" target="_blank" rel="noopener"><img src="media/24.gif" width="800" height="450" alt="Open Shell and activate Faces to remove · 打开抽壳并激活待移除面" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/24.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 24 · 打开第 24 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-25" class="step" data-number="25">
+  <h3><a class="number" href="#step-25" aria-label="Step 25 · 第 25 步">25</a><span>Select the small top cap<span lang="zh-CN">选择顶部小端面</span></span></h3>
+  <p>Click inside the small, flat circular top cap. Choose a point slightly away from the center and the rim. The list should show one <strong>Face of Loft 1</strong>.</p><p lang="zh-CN" class="translation">点击顶部小圆形平端面的内部，选点稍微避开圆心和边缘。列表应出现一项 <strong>Face of Loft 1</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/25.gif" target="_blank" rel="noopener"><img src="media/25.gif" width="800" height="450" alt="Select the small top cap · 选择顶部小端面" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/25.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 25 · 打开第 25 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-26" class="step" data-number="26">
+  <h3><a class="number" href="#step-26" aria-label="Step 26 · 第 26 步">26</a><span>Select the large bottom cap<span lang="zh-CN">选择底部大端面</span></span></h3>
+  <p>Keep the <strong>Shell</strong> dialog open. Hold the right mouse button and drag in the graphics area until the underside is visible, then click <strong>Bottom</strong> on the view cube. You can also press <strong>Shift + 6</strong> to switch to <strong>Bottom</strong>. Click the interior of the large flat bottom disk. Keep the selection clear of both its center and its rim. <strong>Faces to remove</strong> should now contain two <strong>Face of Loft 1</strong> entries.</p><p lang="zh-CN" class="translation">保持 <strong>Shell</strong> 窗口打开。按住鼠标右键，在画图区拖动直到看见底部，再点击视图立方体上的 <strong>Bottom</strong>。也可以按 <strong>Shift + 6</strong> 直接进入底视图。点击底部大圆形平面的内部，避开圆心和圆边。此时 <strong>Faces to remove</strong> 中应有两项 <strong>Face of Loft 1</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/26.gif" target="_blank" rel="noopener"><img src="media/26.gif" width="800" height="450" alt="Select the large bottom cap · 选择底部大端面" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/26.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 26 · 打开第 26 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-27" class="step" data-number="27">
+  <h3><a class="number" href="#step-27" aria-label="Step 27 · 第 27 步">27</a><span>Set the inward wall thickness to 0.10 in<span lang="zh-CN">将向内壁厚设为 0.10 英寸</span></span></h3>
+  <p>Click <strong>Shell thickness</strong>, replace the value with <strong>0.10 in</strong>, and press <strong>Tab</strong>. Keep the inward direction. Click the green checkmark to create <strong>Shell 1</strong>.</p><p lang="zh-CN" class="translation">点击壁厚 <strong>Shell thickness</strong>，将数值改为 <strong>0.10 in</strong>，按 <strong>Tab</strong>。保持向内抽壳的方向，点击绿色勾生成 <strong>Shell 1</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/27.gif" target="_blank" rel="noopener"><img src="media/27.gif" width="800" height="450" alt="Set the inward wall thickness to 0.10 in · 将向内壁厚设为 0.10 英寸" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/27.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 27 · 打开第 27 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-28" class="step" data-number="28">
+  <h3><a class="number" href="#step-28" aria-label="Step 28 · 第 28 步">28</a><span>Look through the cone from below<span lang="zh-CN">从底部检查开口是否贯通</span></span></h3>
+  <p>Stay in <strong>Bottom</strong> view. Look for the thin outer rim and a small circular patch of background at the center. Seeing the background through that small circle confirms that both ends are open.</p><p lang="zh-CN" class="translation">保持 <strong>Bottom</strong> 底视图。先看最外侧的一圈薄壁，再看中央的小圆孔。能够透过小孔看到画布背景，说明上下两个开口贯通了。</p>
+  <figure><details class="visual" open><summary>Model or settings check · 对照模型或设置</summary><a class="media" href="media/28.gif" target="_blank" rel="noopener"><img src="media/28.gif" width="800" height="450" alt="Look through the cone from below · 从底部检查开口是否贯通" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/28.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 28 · 打开第 28 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-29" class="step" data-number="29">
+  <h3><a class="number" href="#step-29" aria-label="Step 29 · 第 29 步">29</a><span>Verify Shell 1 and one part<span lang="zh-CN">核对 Shell 1 和零件数</span></span></h3>
+  <p>Check that <strong>Shell 1</strong> appears in <strong>Features</strong> and that the lower-left list still shows <strong>Parts (1)</strong>.</p><p lang="zh-CN" class="translation">确认特征 <strong>Features</strong> 列表中出现 <strong>Shell 1</strong>，左下方仍显示 <strong>Parts (1)</strong>。</p>
+  <figure><details class="visual" open><summary>Model or settings check · 对照模型或设置</summary><a class="media" href="media/29.gif" target="_blank" rel="noopener"><img src="media/29.gif" width="832" height="520" alt="Verify Shell 1 and one part · 核对 Shell 1 和零件数" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/29.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 29 · 打开第 29 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-30" class="step" data-number="30">
+  <h3><a class="number" href="#step-30" aria-label="Step 30 · 第 30 步">30</a><span>Return to an isometric view<span lang="zh-CN">切回等轴视图</span></span></h3>
+  <p>Click the <strong>Camera and render options</strong> arrow and choose <strong>Isometric</strong> before starting the flange sketch.</p><p lang="zh-CN" class="translation">开始画底座剖面前，点击 <strong>Camera and render options</strong> 的小箭头，选择等轴视图 <strong>Isometric</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/30.gif" target="_blank" rel="noopener"><img src="media/30.gif" width="832" height="520" alt="Return to an isometric view · 切回等轴视图" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/30.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 30 · 打开第 30 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+</section>
+<section class="stage" id="stage-31" aria-labelledby="title-31"><header class="stage-head"><div><p>Steps 31–36 · 第 31–36 步</p><h2 id="title-31">Find the cone’s outline<span lang="zh-CN">取得锥壁的相交线</span></h2></div><a href="#contents">Contents ↑<span lang="zh-CN">返回目录</span></a></header>
+<article id="step-31" class="step" data-number="31">
+  <h3><a class="number" href="#step-31" aria-label="Step 31 · 第 31 步">31</a><span>Start Sketch 3 on the Front plane<span lang="zh-CN">在 Front 平面上建立第三个草图</span></span></h3>
+  <p>In <strong>Features</strong>, click the <strong>Front</strong> row under <strong>Default geometry</strong>, then click <strong>Sketch</strong>. Check that the dialog says <strong>Front plane</strong>. Stay in the angled view for the next selection.</p><p lang="zh-CN" class="translation">在 <strong>Features</strong> 中点击 <strong>Default geometry</strong> 下的前视平面 <strong>Front</strong>，再点击 <strong>Sketch</strong>。确认对话框显示 <strong>Front plane</strong>。下一步选面时先保持斜视图。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/31.gif" target="_blank" rel="noopener"><img src="media/31.gif" width="832" height="520" alt="Start Sketch 3 on the Front plane · 在 Front 平面上建立第三个草图" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/31.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 31 · 打开第 31 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-32" class="step" data-number="32">
+  <h3><a class="number" href="#step-32" aria-label="Step 32 · 第 32 步">32</a><span>Find the Intersection sketch tool<span lang="zh-CN">找到草图中的 Intersection 工具</span></span></h3>
+  <p>Click <strong>Search tools</strong>, type <strong>Intersection</strong>, and click the <strong>Intersection</strong> sketch tool. It is also in the dropdown beside <strong>Use</strong> on the sketch toolbar.</p><p lang="zh-CN" class="translation">点击 <strong>Search tools</strong>，输入 <strong>Intersection</strong>，点击草图工具相交 <strong>Intersection</strong>。也可以从草图工具栏 <strong>Use</strong> 旁的下拉菜单找到它。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/32.gif" target="_blank" rel="noopener"><img src="media/32.gif" width="832" height="520" alt="Find the Intersection sketch tool · 找到草图中的 Intersection 工具" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/32.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 32 · 打开第 32 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-33" class="step" data-number="33">
+  <h3><a class="number" href="#step-33" aria-label="Step 33 · 第 33 步">33</a><span>Select the cone’s outer wall<span lang="zh-CN">选择锥体外侧的曲面</span></span></h3>
+  <p>Click once on the broad, sloping outside wall about halfway up the cone. Press <strong>Esc</strong>, then click the <strong>Front</strong> face of the view cube.</p><p lang="zh-CN" class="translation">在锥体大约一半高度处，点击一次外侧宽阔的倾斜曲面。按 <strong>Esc</strong>，再点击视图立方体上的 <strong>Front</strong> 面。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/33.gif" target="_blank" rel="noopener"><img src="media/33.gif" width="832" height="520" alt="Select the cone’s outer wall · 选择锥体外侧的曲面" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/33.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 33 · 打开第 33 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-34" class="step" data-number="34">
+  <h3><a class="number" href="#step-34" aria-label="Step 34 · 第 34 步">34</a><span>Identify the two sloping intersection lines<span lang="zh-CN">找到两条倾斜的相交线</span></span></h3>
+  <p>Look for two sloping lines where <strong>Front</strong> cuts through the outside wall. These lines give the flange profile an exact reference to the cone.</p><p lang="zh-CN" class="translation">检查 <strong>Front</strong> 与锥体外壁相交后生成的两条斜线。后面的底座剖面将以这些线为准确参照。</p>
+  <figure><details class="visual" open><summary>Model or settings check · 对照模型或设置</summary><a class="media" href="media/34.gif" target="_blank" rel="noopener"><img src="media/34.gif" width="832" height="520" alt="Identify the two sloping intersection lines · 找到两条倾斜的相交线" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/34.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 34 · 打开第 34 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-35" class="step" data-number="35">
+  <h3><a class="number" href="#step-35" aria-label="Step 35 · 第 35 步">35</a><span>Hide the part and enlarge the lower corner<span lang="zh-CN">隐藏实体并放大右下角</span></span></h3>
+  <p><strong>Right</strong>-click <strong>Part 1</strong> in the Parts list and choose <strong>Hide</strong>. Move the pointer to the lower-right corner of the cone outline and scroll forward two notches to zoom in. If the corner is too low on screen, hold the middle mouse button and drag upward to pan.</p><p lang="zh-CN" class="translation">在 Parts 列表中右键点击 <strong>Part 1</strong>，选择 <strong>Hide</strong>（隐藏）。把鼠标移到锥体轮廓的右下角，向前滚动两格放大。如果这个角在屏幕上位置太低，按住鼠标中键并向上拖动，平移到方便操作的位置。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/35.gif" target="_blank" rel="noopener"><img src="media/35.gif" width="832" height="520" alt="Hide the part and enlarge the lower corner · 隐藏实体并放大右下角" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/35.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 35 · 打开第 35 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-36" class="step" data-number="36">
+  <h3><a class="number" href="#step-36" aria-label="Step 36 · 第 36 步">36</a><span>Convert both sloping lines to construction lines<span lang="zh-CN">将两条斜线都转为构造线</span></span></h3>
+  <p>Click the left sloping line, then the right one. With both selected, click <strong>Construction</strong>, the dashed-line toggle on the sketch toolbar. Click blank space or press <strong>Space</strong> to clear the selection. Both lines should now be dashed.</p><p lang="zh-CN" class="translation">先点击左斜线，再点击右斜线。保持两条线都被选中，点击草图工具栏的虚线按钮 <strong>Construction</strong>（构造线）。点击空白处或按 <strong>Space</strong> 清除选择，两条斜线现在都应显示为虚线。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/36.gif" target="_blank" rel="noopener"><img src="media/36.gif" width="832" height="520" alt="Convert both sloping lines to construction lines · 将两条斜线都转为构造线" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/36.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 36 · 打开第 36 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+</section>
+<section class="stage" id="stage-37" aria-labelledby="title-37"><header class="stage-head"><div><p>Steps 37–42 · 第 37–42 步</p><h2 id="title-37">Sketch the base flange<span lang="zh-CN">绘制底缘剖面</span></h2></div><a href="#contents">Contents ↑<span lang="zh-CN">返回目录</span></a></header>
+<article id="step-37" class="step" data-number="37">
+  <h3><a class="number" href="#step-37" aria-label="Step 37 · 第 37 步">37</a><span>Draw the closed four-sided flange profile<span lang="zh-CN">依次连接四点，闭合底缘剖面</span></span></h3>
+  <p>Click <strong>Line</strong>. Follow the A–D diagram below for the click order. A is the bottom endpoint of the right dashed line. Click A. Move right at the same height and click B. Move straight up and click C. Move left at the same height and click D on the dashed slope. Click A again to close the four-sided loop, then press <strong>Esc</strong>.</p><p lang="zh-CN" class="translation">点击 <strong>Line</strong>（直线）。按下方标有 A–D 的示意图找各落点。A 是右侧虚线的下端点，先点 A。向右水平移动，点 B。再竖直向上，点 C。从 C 水平向左，在与右侧虚线相交处点 D。最后再次点 A，闭合四边形，再按 <strong>Esc</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/37.gif" target="_blank" rel="noopener"><img src="media/37.gif" width="832" height="520" alt="Draw the closed four-sided flange profile · 依次连接四点，闭合底缘剖面" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/37.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 37 · 打开第 37 步原图">Full size · 原图 ↗</a></figcaption></figure>
+  <details class="diagram"><summary>See points A–D · <span lang="zh-CN">查看 A–D 四个点</span></summary><figure><img src="flange-profile.png" width="960" height="440" alt="Flange cross-section showing click order A, B, C, D, A and the sloping cone wall · 标有 A、B、C、D、A 落点的底缘剖面和倾斜锥壁" loading="lazy" decoding="async"><figcaption>A–D label the diagram. You can find the same positions on your sketch from the dashed line and the connected edges. <span lang="zh-CN">A–D 是示意图中的标记，在自己的草图中请根据虚线及相连的边来找这些位置。</span></figcaption></figure></details>
+</article>
+<article id="step-38" class="step" data-number="38">
+  <h3><a class="number" href="#step-38" aria-label="Step 38 · 第 38 步">38</a><span>Set the outward extension to 1.50 in<span lang="zh-CN">将底缘向外伸出的宽度设为 1.50 英寸</span></span></h3>
+  <p>Click <strong>Dimension</strong>. Click the bottom line from A to B. Click blank space below it to place the label, type <strong>1.50 in</strong>, and press <strong>Enter</strong>.</p><p lang="zh-CN" class="translation">点击 <strong>Dimension</strong>。点击 A 到 B 的底边，再点击下方空白处放置标注，输入 <strong>1.50 in</strong>，按 <strong>Enter</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/38.gif" target="_blank" rel="noopener"><img src="media/38.gif" width="832" height="520" alt="Set the outward extension to 1.50 in · 将底缘向外伸出的宽度设为 1.50 英寸" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/38.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 38 · 打开第 38 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-39" class="step" data-number="39">
+  <h3><a class="number" href="#step-39" aria-label="Step 39 · 第 39 步">39</a><span>Set the flange thickness to 0.25 in<span lang="zh-CN">将底缘厚度设为 0.25 英寸</span></span></h3>
+  <p>With <strong>Dimension</strong> still active, click the endpoints B and C, then click blank space to the right at a height between those points. Type <strong>0.25 in</strong>, press <strong>Enter</strong>, then press <strong>Esc</strong>. The short edge can be hard to select by its midpoint, so use the two endpoints.</p><p lang="zh-CN" class="translation">保持 <strong>Dimension</strong> 开启。依次点击端点 B、C，再到两点右侧、介于两点高度之间的空白处点击。输入 <strong>0.25 in</strong>，按 <strong>Enter</strong>，再按 <strong>Esc</strong>。这条短边的中点较难选，用两个端点更容易。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/39.gif" target="_blank" rel="noopener"><img src="media/39.gif" width="832" height="520" alt="Set the flange thickness to 0.25 in · 将底缘厚度设为 0.25 英寸" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/39.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 39 · 打开第 39 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-40" class="step" data-number="40">
+  <h3><a class="number" href="#step-40" aria-label="Step 40 · 第 40 步">40</a><span>Straighten the top and outer edges if needed<span lang="zh-CN">按需约束顶边水平、外边竖直</span></span></h3>
+  <p>If CD is tilted, open the sketch constraints menu, choose <strong>Horizontal</strong>, click the top edge CD and press <strong>Esc</strong>. If BC leans sideways, choose <strong>Vertical</strong> from the same menu, click points B and C, then press <strong>Esc</strong>. Keep any horizontal or vertical constraint that Onshape already applied while you drew the lines.</p><p lang="zh-CN" class="translation">如果顶边 CD 有倾斜，打开草图约束菜单，选 <strong>Horizontal</strong>（水平），点击顶边 CD，再按 <strong>Esc</strong>。如果 BC 侧边倾斜，在同一菜单选 <strong>Vertical</strong>（竖直），先后点 B 和 C，再按 <strong>Esc</strong>。画线时已经自动加上的水平或竖直约束可以直接保留。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/40.gif" target="_blank" rel="noopener"><img src="media/40.gif" width="832" height="520" alt="Straighten the top and outer edges if needed · 按需约束顶边水平、外边竖直" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/40.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 40 · 打开第 40 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-41" class="step" data-number="41">
+  <h3><a class="number" href="#step-41" aria-label="Step 41 · 第 41 步">41</a><span>Close a gap at A if needed<span lang="zh-CN">按需让 A 点处的端点重合</span></span></h3>
+  <p>If the loop has a gap at A, move the pointer over A and scroll forward to enlarge it. Look for a separate endpoint near the lower end of the dashed line. In the constraints menu, choose <strong>Coincident</strong>. Click the loose endpoint, then click A where the lower edge meets the reference. Press <strong>Esc</strong>.</p><p lang="zh-CN" class="translation">如果轮廓在 A 处有缝，把鼠标移到 A 附近并向前滚动，放大观察。在虚线的下端附近寻找分离的端点。打开约束菜单，选 <strong>Coincident</strong>（重合）。先点击分离的端点，再点击底边与参考线交会处的 A，按 <strong>Esc</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/41.gif" target="_blank" rel="noopener"><img src="media/41.gif" width="832" height="520" alt="Close a gap at A if needed · 按需让 A 点处的端点重合" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/41.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 41 · 打开第 41 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-42" class="step" data-number="42">
+  <h3><a class="number" href="#step-42" aria-label="Step 42 · 第 42 步">42</a><span>Check for a closed shaded region<span lang="zh-CN">检查剖面是否闭合并出现填充</span></span></h3>
+  <p>Check for gray shading inside the small four-sided profile. A closed region can be selected for <strong>Revolve</strong>. Black boundary lines indicate the edges are fully constrained. The dashed sloping lines remain construction geometry. If shading is missing, inspect the four corners for a gap before continuing.</p><p lang="zh-CN" class="translation">检查小四边形内部是否出现灰色填充。闭合区域才能作为 <strong>Revolve</strong> 的剖面。四条边都变黑，表示它们已经完全约束。倾斜的虚线继续作为构造参考。如果没有填充，先检查四角是否有未闭合的端点，再继续。</p>
+  <figure><details class="visual" open><summary>Model or settings check · 对照模型或设置</summary><a class="media" href="media/42.gif" target="_blank" rel="noopener"><img src="media/42.gif" width="832" height="520" alt="Check for a closed shaded region · 检查剖面是否闭合并出现填充" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/42.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 42 · 打开第 42 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+</section>
+<section class="stage" id="stage-43" aria-labelledby="title-43"><header class="stage-head"><div><p>Steps 43–51 · 第 43–51 步</p><h2 id="title-43">Revolve and measure<span lang="zh-CN">旋转并测量底缘</span></h2></div><a href="#contents">Contents ↑<span lang="zh-CN">返回目录</span></a></header>
+<article id="step-43" class="step" data-number="43">
+  <h3><a class="number" href="#step-43" aria-label="Step 43 · 第 43 步">43</a><span>Show the cone and finish Sketch 3<span lang="zh-CN">显示实体并完成 Sketch 3</span></span></h3>
+  <p><strong>Right</strong>-click <strong>Part 1</strong> in the Parts list and click <strong>Show</strong>. Click the green checkmark to save <strong>Sketch 3</strong>.</p><p lang="zh-CN" class="translation">在零件列表中右键点击 <strong>Part 1</strong>，选择显示 <strong>Show</strong>。点击绿色勾保存 <strong>Sketch 3</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/43.gif" target="_blank" rel="noopener"><img src="media/43.gif" width="832" height="520" alt="Show the cone and finish Sketch 3 · 显示实体并完成 Sketch 3" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/43.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 43 · 打开第 43 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-44" class="step" data-number="44">
+  <h3><a class="number" href="#step-44" aria-label="Step 44 · 第 44 步">44</a><span>Open Revolve and choose Solid and Add<span lang="zh-CN">打开旋转并选择 Solid、Add</span></span></h3>
+  <p>Click <strong>Search tools</strong>, type <strong>Revolve</strong>, and choose <strong>Revolve</strong>. Click <strong>Solid</strong>, then <strong>Add</strong>. The new flange will join the cone that already exists.</p><p lang="zh-CN" class="translation">点击 <strong>Search tools</strong>，输入 <strong>Revolve</strong>，选择搜索结果中的 <strong>Revolve</strong>（旋转）。先选 <strong>Solid</strong>（实体），再选 <strong>Add</strong>（添加），让新底缘与已有的锥体连成一个零件。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/44.gif" target="_blank" rel="noopener"><img src="media/44.gif" width="832" height="520" alt="Open Revolve and choose Solid and Add · 打开旋转并选择 Solid、Add" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/44.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 44 · 打开第 44 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-45" class="step" data-number="45">
+  <h3><a class="number" href="#step-45" aria-label="Step 45 · 第 45 步">45</a><span>Select the small flange region<span lang="zh-CN">选择底缘的小块封闭剖面</span></span></h3>
+  <p>Click <strong>Faces and sketch regions to revolve</strong>. In <strong>Front</strong> view, click inside the small gray profile at the lower-right side of the cone, between its top and bottom lines. The field should show <strong>Face of Sketch 3</strong>.</p><p lang="zh-CN" class="translation">点击待旋转的面与草图区域 <strong>Faces and sketch regions to revolve</strong>。在 <strong>Front</strong> 视图中，点击锥体右下方、小剖面上下两条边之间的灰色内部。字段应显示 <strong>Face of Sketch 3</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/45.gif" target="_blank" rel="noopener"><img src="media/45.gif" width="832" height="520" alt="Select the small flange region · 选择底缘的小块封闭剖面" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/45.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 45 · 打开第 45 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-46" class="step" data-number="46">
+  <h3><a class="number" href="#step-46" aria-label="Step 46 · 第 46 步">46</a><span>Use the axis of the conical face<span lang="zh-CN">用圆锥面的中心轴旋转</span></span></h3>
+  <p>Click the <strong>Revolve axis</strong> field. Click the middle of the outside sloping wall of the cone, away from the top and bottom rims. The field should show <strong>Face of Loft 1</strong>. Onshape uses the center axis of that conical face.</p><p lang="zh-CN" class="translation">点击旋转轴 <strong>Revolve axis</strong> 字段。在锥体外侧倾斜曲面的中间点击，避开上下端的圆边。字段应显示 <strong>Face of Loft 1</strong>。Onshape 会使用该圆锥面的中心轴。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/46.gif" target="_blank" rel="noopener"><img src="media/46.gif" width="832" height="520" alt="Use the axis of the conical face · 用圆锥面的中心轴旋转" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/46.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 46 · 打开第 46 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-47" class="step" data-number="47">
+  <h3><a class="number" href="#step-47" aria-label="Step 47 · 第 47 步">47</a><span>Make a full turn and merge with Part 1<span lang="zh-CN">旋转整周并合并到 Part 1</span></span></h3>
+  <p>Keep <strong>Full revolve</strong> checked for 360 degrees. Check that <strong>Merge scope</strong> shows <strong>Part 1</strong>. If the box is empty, click it and then click <strong>Part 1</strong> in the Parts list.</p><p lang="zh-CN" class="translation">保持完整旋转 <strong>Full revolve</strong> 勾选，旋转一整周 360 度。确认合并范围 <strong>Merge scope</strong> 显示 <strong>Part 1</strong>。若该框为空，先点击它，再点击零件列表中的 <strong>Part 1</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/47.gif" target="_blank" rel="noopener"><img src="media/47.gif" width="832" height="520" alt="Make a full turn and merge with Part 1 · 旋转整周并合并到 Part 1" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/47.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 47 · 打开第 47 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-48" class="step" data-number="48">
+  <h3><a class="number" href="#step-48" aria-label="Step 48 · 第 48 步">48</a><span>Check and finish the circular flange<span lang="zh-CN">检查并完成环形底缘</span></span></h3>
+  <p>Open the <strong>Camera and render options</strong> menu and click <strong>Isometric</strong>. Check for a flat circular flange all the way around the cone and <strong>Parts (1)</strong>. Click the green checkmark.</p><p lang="zh-CN" class="translation">打开 <strong>Camera and render options</strong> 菜单并点击 <strong>Isometric</strong>。确认锥体四周出现平整的圆形底座，而且仍显示 <strong>Parts (1)</strong>，再点击绿色勾。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/48.gif" target="_blank" rel="noopener"><img src="media/48.gif" width="832" height="520" alt="Check and finish the circular flange · 检查并完成环形底缘" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/48.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 48 · 打开第 48 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-49" class="step" data-number="49">
+  <h3><a class="number" href="#step-49" aria-label="Step 49 · 第 49 步">49</a><span>Look at the underside<span lang="zh-CN">从底部观察交通锥</span></span></h3>
+  <p>Turn the model until the underside is visible by holding the right mouse button and dragging. Click <strong>Bottom</strong> on the view cube to look straight at the base, or press <strong>Shift + 6</strong>.</p><p lang="zh-CN" class="translation">按住鼠标右键拖动，将模型转到能看到底部的位置。点击视图立方体的 <strong>Bottom</strong> 正对底座，也可按 <strong>Shift + 6</strong> 直接切换。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/49.gif" target="_blank" rel="noopener"><img src="media/49.gif" width="832" height="520" alt="Look at the underside · 从底部观察交通锥" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/49.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 49 · 打开第 49 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-50" class="step" data-number="50">
+  <h3><a class="number" href="#step-50" aria-label="Step 50 · 第 50 步">50</a><span>Measure the 7 in outer diameter<span lang="zh-CN">测量底缘的 7 英寸外径</span></span></h3>
+  <p>Click the outermost circular edge of the flange near the bottom of the view. Read the measurement in the lower-right corner. It should say <strong>Diameter: 7.000 in</strong>. The center opening should still show the background. The 7 in diameter is a measurement check. It comes from the <strong>4 in</strong> lower diameter plus a <strong>1.50 in</strong> extension on each side.</p><p lang="zh-CN" class="translation">点击底缘最外圈的圆边，可选视图下方的边缘。读屏幕右下角的测量结果，应显示 <strong>Diameter: 7.000 in</strong>。中央小孔仍应能透出背景。7 英寸是用来核验的外径：底部圆直径 4 英寸，左右各多出 1.50 英寸。</p>
+  <figure><details class="visual" open><summary>Model or settings check · 对照模型或设置</summary><a class="media" href="media/50.gif" target="_blank" rel="noopener"><img src="media/50.gif" width="832" height="520" alt="Measure the 7 in outer diameter · 测量底缘的 7 英寸外径" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/50.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 50 · 打开第 50 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-51" class="step" data-number="51">
+  <h3><a class="number" href="#step-51" aria-label="Step 51 · 第 51 步">51</a><span>Return to the angled view<span lang="zh-CN">恢复等轴视图</span></span></h3>
+  <p>Click blank space or press <strong>Space</strong> to clear the selection. Open <strong>Camera and render options</strong> and choose <strong>Isometric</strong>. <strong>Shift + 7</strong> also restores the isometric view.</p><p lang="zh-CN" class="translation">点击空白处或按 <strong>Space</strong> 清除选择。打开 <strong>Camera and render options</strong>，选择 <strong>Isometric</strong>。按 <strong>Shift + 7</strong> 也能切回等轴视图。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/51.gif" target="_blank" rel="noopener"><img src="media/51.gif" width="832" height="520" alt="Return to the angled view · 恢复等轴视图" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/51.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 51 · 打开第 51 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+</section>
+<section class="stage" id="stage-52" aria-labelledby="title-52"><header class="stage-head"><div><p>Steps 52–56 · 第 52–56 步</p><h2 id="title-52">Color and final checks<span lang="zh-CN">着色与成品检查</span></h2></div><a href="#contents">Contents ↑<span lang="zh-CN">返回目录</span></a></header>
+<article id="step-52" class="step" data-number="52">
+  <h3><a class="number" href="#step-52" aria-label="Step 52 · 第 52 步">52</a><span>Open the part appearance settings<span lang="zh-CN">打开整个零件的外观设置</span></span></h3>
+  <p>In the Parts list, right-click <strong>Part 1</strong> and click <strong>Edit appearance</strong>.</p><p lang="zh-CN" class="translation">在 Parts 列表中右键点击 <strong>Part 1</strong>，再点击编辑外观 <strong>Edit appearance</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/52.gif" target="_blank" rel="noopener"><img src="media/52.gif" width="832" height="520" alt="Open the part appearance settings · 打开整个零件的外观设置" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/52.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 52 · 打开第 52 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-53" class="step" data-number="53">
+  <h3><a class="number" href="#step-53" aria-label="Step 53 · 第 53 步">53</a><span>Choose traffic-cone orange<span lang="zh-CN">选择交通锥的橙色</span></span></h3>
+  <p>Click the <strong>Palette</strong> tab. In the top row, click the orange swatch immediately to the right of the light blue swatch. Check that the hex field reads <strong>F88701</strong>. If the palette is different, enter <strong>F88701</strong> in the hex field.</p><p lang="zh-CN" class="translation">点击调色板 <strong>Palette</strong> 标签。在最上排，点击浅蓝色右侧紧邻的橙色色块。检查十六进制颜色字段是否为 <strong>F88701</strong>。如果调色板不同，可直接在该字段输入 <strong>F88701</strong>。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/53.gif" target="_blank" rel="noopener"><img src="media/53.gif" width="832" height="520" alt="Choose traffic-cone orange · 选择交通锥的橙色" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/53.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 53 · 打开第 53 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-54" class="step" data-number="54">
+  <h3><a class="number" href="#step-54" aria-label="Step 54 · 第 54 步">54</a><span>Apply the new appearance<span lang="zh-CN">确认颜色并整理视图</span></span></h3>
+  <p>Click the green checkmark to apply the color, then click blank space. If a plane or the origin overlaps the view, hover over its row and click the eye to hide it. <strong>Shift + P</strong> toggles the reference geometry together.</p><p lang="zh-CN" class="translation">点击绿色对勾应用颜色，再点空白处。如果参考平面或原点挡住模型，把鼠标移到对应行，点击眼睛图标隐藏它。<strong>Shift + P</strong> 也可一起切换参考几何的显示。</p>
+  <figure><details class="visual" open><summary>Recording excerpt · 录屏节选</summary><a class="media" href="media/54.gif" target="_blank" rel="noopener"><img src="media/54.gif" width="832" height="520" alt="Apply the new appearance · 确认颜色并整理视图" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/54.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 54 · 打开第 54 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-55" class="step" data-number="55">
+  <h3><a class="number" href="#step-55" aria-label="Step 55 · 第 55 步">55</a><span>Inspect the opening, wall and base<span lang="zh-CN">检查开口、锥壁和底座</span></span></h3>
+  <p>In the angled view, check that you can see the small opening, the tapered wall, and the round base. The Parts list should show <strong>Parts (1)</strong>.</p><p lang="zh-CN" class="translation">在斜视图中检查，能够看到小端开口、锥形侧壁和圆形底座。Parts 列表应显示 <strong>Parts (1)</strong>。</p>
+  <figure><details class="visual" open><summary>Model or settings check · 对照模型或设置</summary><a class="media" href="media/55.gif" target="_blank" rel="noopener"><img src="media/55.gif" width="832" height="520" alt="Inspect the opening, wall and base · 检查开口、锥壁和底座" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/55.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 55 · 打开第 55 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+<article id="step-56" class="step" data-number="56">
+  <h3><a class="number" href="#step-56" aria-label="Step 56 · 第 56 步">56</a><span>Check the feature order<span lang="zh-CN">核对特征的先后顺序</span></span></h3>
+  <p>Read the feature list from top to bottom. It should contain <strong>Sketch 1</strong>, <strong>Plane 1</strong>, <strong>Sketch 2</strong>, <strong>Loft 1</strong>, <strong>Shell 1</strong>, <strong>Sketch 3</strong>, and <strong>Revolve 1</strong>.</p><p lang="zh-CN" class="translation">从上到下查看特征列表，应依次有 <strong>Sketch 1</strong>、<strong>Plane 1</strong>、<strong>Sketch 2</strong>、<strong>Loft 1</strong>、<strong>Shell 1</strong>、<strong>Sketch 3</strong>、<strong>Revolve 1</strong>。</p>
+  <figure><details class="visual" open><summary>Model or settings check · 对照模型或设置</summary><a class="media" href="media/56.gif" target="_blank" rel="noopener"><img src="media/56.gif" width="832" height="520" alt="Check the feature order · 核对特征的先后顺序" loading="lazy" decoding="async"></a></details>
+  <figcaption><a href="media/56.gif" target="_blank" rel="noopener" aria-label="Open full-size visual for step 56 · 打开第 56 步原图">Full size · 原图 ↗</a></figcaption></figure>
+
+</article>
+</section>
+</div>
+</div></main>
+<script>
+const search = document.getElementById('search');
+const clear = document.getElementById('clear');
+const status = document.getElementById('status');
+const toc = document.querySelector('.toc');
+const stages = Array.from(document.querySelectorAll('.stage'));
+const cards = Array.from(document.querySelectorAll('.step'));
+const normalize = value => value.normalize('NFKC').toLowerCase().trim();
+const texts = cards.map(card => normalize([...card.querySelectorAll('h3,p')].map(item => item.textContent).join(' ')));
+document.getElementById('search-tools').hidden = false;
+if (window.matchMedia('(max-width:760px)').matches) toc.open = false;
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  document.querySelectorAll('details.visual').forEach(visual => visual.open = false);
+}
+function filterSteps(){
+  const query = normalize(search.value);
+  const number = query.match(/^(?:step\s*|第\s*)?0*(\d{1,2})(?:\s*步)?$/);
+  let visible = 0;
+  cards.forEach((card,index) => {
+    const match = number ? Number(card.dataset.number) === Number(number[1]) : query.split(/\s+/).every(word => texts[index].includes(word));
+    card.hidden = !match;
+    if (match) visible++;
+  });
+  stages.forEach(stage => stage.hidden = !stage.querySelector('.step:not([hidden])'));
+  clear.hidden = !query;
+  status.textContent = query ? visible + ' / ' + cards.length + ' steps · 已显示 ' + visible + ' 步' : '';
+  document.getElementById('no-matches').hidden = visible > 0;
+}
+function showDestination(){
+  const destination = document.getElementById(location.hash.slice(1));
+  if (destination && destination.closest('[hidden]')){
+    search.value = '';
+    filterSteps();
+    destination.scrollIntoView();
+  }
+}
+search.addEventListener('input',filterSteps);
+clear.addEventListener('click',() => { search.value=''; filterSteps(); search.focus(); });
+toc.addEventListener('click',event => {
+  if (event.target.closest('a') && search.value){search.value = ''; filterSteps();}
+});
+window.addEventListener('hashchange',showDestination);
+</script>
+</body>
+</html>
