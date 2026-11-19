@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复制 Onshape 学生提示词，或下载 Codex Skill，制作自己的中英双语 Word 和逐步动图教程。">
+  <title>学生工具包 · Student Toolkit | Onshape Notes</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+      color: #18363a;
+      background: #f4f7f5;
+      line-height: 1.65;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    [hidden] { display: none !important; }
+    a { color: #075c59; text-underline-offset: .19em; }
+    a:hover { text-decoration-thickness: 2px; }
+    :where(a,button,textarea):focus-visible { outline: 3px solid #167671; outline-offset: 4px; }
+    .wrap { width: min(calc(100% - 2.5rem), 63rem); margin-inline: auto; }
+    .mast { background: white; border-bottom: 1px solid #cbd9d5; }
+    .mast .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: 1rem; }
+    .brand { font-size: 1.05rem; font-weight: 700; letter-spacing: -.025em; }
+    .intro { margin: clamp(2rem,5vw,3.5rem) 0 1.65rem; }
+    h1,h2,h3,p { margin: 0; }
+    h1 { font-size: clamp(2.25rem,5vw,3.65rem); line-height: 1.16; letter-spacing: -.04em; }
+    h1 span { display: inline-block; margin-inline-start: .45em; font-size: .42em; color: #536c6e; font-weight: 600; letter-spacing: -.01em; }
+    .lede { margin-top: .85rem; max-width: 46em; }
+    .jump { display: flex; gap: 1.2rem; margin-top: .85rem; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1.57fr) minmax(0, 1fr); align-items: start; gap: clamp(1rem, 2.4vw, 1.5rem); padding-bottom: clamp(2.5rem,6vw,5rem); }
+    section { min-width: 0; border: 1px solid #c6d5d1; background: white; border-radius: .65rem; padding: clamp(1.15rem, 2.3vw, 1.65rem); scroll-margin-top: 1rem; }
+    h2 { font-size: clamp(1.4rem, 2.7vw, 1.7rem); line-height: 1.28; letter-spacing: -.025em; }
+    h3 { font-size: 1.04rem; line-height: 1.5; margin-top: 1.5rem; }
+    section p { margin-top: .45rem; }
+    ol { padding-inline-start: 1.45em; margin: .8rem 0; }
+    li { margin-block: .4rem; padding-inline-start: .1em; }
+    li::marker { font-weight: 650; color: #0c605a; }
+    .prompt-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .55rem 1rem; margin: 1.25rem 0 .5rem; }
+    .prompt-bar label { font-size: 1.05rem; font-weight: 700; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 2.8rem; padding: .49rem .88rem; border: 1px solid #075c59; border-radius: .35rem; background: #075c59; color: white; font: inherit; font-size: .96rem; font-weight: 650; cursor: pointer; text-decoration: none; }
+    .button:hover { background: #064b49; }
+    textarea {
+      display: block; width: 100%; height: 20rem; min-height: 12rem; padding: .9rem 1rem;
+      border: 1px solid #99b3ae; border-radius: .35rem; font: inherit; font-size: .96rem;
+      line-height: 1.72; color: #213d41; background: #f7faf8; resize: vertical;
+    }
+    #copy-status { color: #075c59; font-weight: 600; }
+    #copy-status:empty { margin: 0; }
+    .fine { font-size: .92rem; color: #476165; }
+    .actions { margin-block: .95rem; }
+    code { font-family: ui-monospace, Consolas, monospace; font-size: .92em; overflow-wrap: anywhere; }
+    .example { border-left: 3px solid #93b2a9; margin: .6rem 0 0; padding: .2rem 0 .2rem .75rem; color: #29484b; overflow-wrap: anywhere; }
+    @media(max-width: 720px) {
+      .wrap { width: min(calc(100% - 2rem), 38rem); }
+      .layout { grid-template-columns: minmax(0, 1fr); }
+      .intro { margin-bottom: 1.25rem; }
+      h1 span { font-size: .46em; }
+      textarea { height: 16rem; }
+    }
+    @media(max-width: 380px) { h1 span { display: block; margin: .22em 0 0; } }
+  </style>
+</head>
+<body>
+  <header class="mast">
+    <div class="wrap"><span class="brand" lang="en">Onshape Notes</span><a href="../">返回项目目录</a></div>
+  </header>
+  <main class="wrap">
+    <header class="intro">
+      <h1>学生工具包 <span lang="en">Student Toolkit</span></h1>
+      <p class="lede">把自己的 Onshape 建模过程做成中英双语 Word 和逐步 GIF 网站。第一次做可以直接复制提示词。经常用同一套流程，可以把 Skill 放进自己的 Codex 项目。</p>
+      <nav class="jump" aria-label="本页导航"><a href="#prompt">使用提示词</a><a href="#skill">下载 Skill</a></nav>
+    </header>
+    <div class="layout">
+      <section id="prompt" aria-labelledby="prompt-title">
+        <h2 id="prompt-title">直接使用提示词</h2>
+        <ol>
+          <li>用 Codex 打开一个作业文件夹，附上老师给的 PDF、PPT 或自己的录屏。</li>
+          <li>在浏览器中登录自己的 Onshape，打开练习用的文档和 Part Studio。现场演示时，让 Codex 连接到这个浏览器。</li>
+          <li>复制下方全文，粘贴到 Codex 对话框。先填写项目名称和参考材料，再写明当前进度、操作位置和发布方式，然后发送。</li>
+        </ol>
+        <div class="prompt-bar">
+          <label for="prompt-text">完整提示词</label>
+          <button type="button" id="copy-prompt" class="button" hidden>复制完整提示词</button>
+        </div>
+        <textarea id="prompt-text" readonly spellcheck="false">请在我自己的电脑上，按课件完成一个 Onshape 项目，并把实际操作做成一份初学者可以独立跟做的中英双语动图教程。
+
+【先填这几项】
+项目名称：【例如 Pyramid】
+参考材料：【上传 PDF/PPT，写页码或题目；已有录屏也可附上】
+我的起点：【空白 Part Studio／已完成哪一步／已有成品想重练】
+操作位置：【已打开的文档与 Part Studio 名称，或新建练习文档】
+发布方式：【默认只做本地包；如需发布，写“请发布到我的 GitHub Pages”并填写仓库链接】
+
+【请这样操作并交付】
+1. 先读课件，再看我当前打开的 Onshape，确认特征树、已有几何、单位和目标成品。从我的起点继续。课件没给的尺寸如需自定，请标为“练习建议值”。分不清应改哪个文件时，先问我具体文件。
+
+2. 请实际操作建模，并在操作时捕捉真实画面；也可以剪我提供的真实录屏。每个步骤写清鼠标单击、双击还是右击，按钮或菜单的英文名，应该点哪个面、边、点或输入框，拖动从哪里到哪里，输入哪个数和单位，按什么键确认，以及做对后看到什么。先说目标再说点击位置。例如，选画布上的 Origin 作锥顶时，放大靶心和鼠标落点，并展示 Profiles 新出现的 Vertex of Origin。按项目需要选择相应的检查点。
+
+3. 每步做一个约 1–2 秒的循环 GIF，让学生看清“目标 → 点击 → 结果”。动作太多就拆开，容易点错的位置用真实画面局部放大。仅有截图的步骤标为“截图示范”。如果漏了一次点击，能补录就补录；缺少画面时，在 Word 和网页保留其编号并标“待补录”，告诉我要从哪个画面开始、点什么、录到哪个结果。遇到报错，解释怎样识别和修复。如果暂时无法控制浏览器，先用我的录屏完成能核实的部分。
+
+4. 生成一份可编辑的双语 Word（.docx）：每步先英文、下方紧跟中文，保留 Onshape 界面的英文按钮名。把对应 GIF 嵌在这一步下面，紧接一句“成功时看到什么”。步骤号、数字和单位前后一致。
+
+5. 生成一个可以发给同学的静态网站。首页 index.html 是双语项目目录。点击某个项目才进入它自己的步骤页，例如 pyramid/index.html；项目页可以回到目录。每步的中英文说明下都要能播放对应 GIF，可单独打开放大查看。与 Word 共用步骤号和素材，并支持 #step-09 这样的直达链接。
+
+6. 把 Word、网站和 GIF 放进同一份可转发的本地教学包，解压后双击网站的 index.html 就能看。裁去将发给同学的素材里的账号和私人文档地址。实际点首页项目卡、返回目录，并检查 GIF、Word 排版、手机和电脑上的页面。仅当我指定发布目标时，才把网页和适合公开的素材发布到该仓库，保留已有课程。等部署完成，从公开首页点进项目，核对地址栏进入 /项目短名/，再把实测可打开的链接发给我。
+</textarea>
+        <p id="copy-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        <p class="fine"><a href="downloads/student-prompt.txt" download>下载纯文本提示词（TXT）</a></p>
+      </section>
+      <section id="skill" aria-labelledby="skill-title">
+        <h2 id="skill-title">在项目中使用 Skill</h2>
+        <p>把这套流程保存到自己的作业项目，下次换一个模型，只需在对话里写出 Skill 名称。</p>
+        <p class="actions"><a class="button" href="downloads/onshape-project-tutor.zip" download>下载 Skill（ZIP）</a></p>
+        <ol>
+          <li>解压下载的 ZIP，找到含有 <code>SKILL.md</code> 的 <code>onshape-project-tutor</code> 文件夹。</li>
+          <li>把这个文件夹放进作业项目的 <code>.agents/skills/</code>。如果目录还没有，可以先创建。放好后的文件路径应为 <code>.agents/skills/onshape-project-tutor/SKILL.md</code>。</li>
+          <li>用 Codex 打开作业项目，附上课件，输入下面这句话，并换成自己的进度。</li>
+        </ol>
+        <p class="example">请用 <code>$onshape-project-tutor</code> 做我附上的 Onshape 作业。我已经画好正方形底面，请从 Loft 开始，做成中英双语 Word 和逐步 GIF 网站。这次只做本地包。</p>
+        <h3>从新文件夹开始</h3>
+        <p>完整工具包里有使用说明、提示词和已放好位置的 Skill。把整包解压到新的作业文件夹，再用 Codex 打开即可。</p>
+        <p><a href="downloads/onshape-student-kit.zip" download>下载完整学生工具包（ZIP）</a></p>
+      </section>
+    </div>
+  </main>
+  <script>
+    const promptField = document.getElementById('prompt-text');
+    const copyButton = document.getElementById('copy-prompt');
+    const copyStatus = document.getElementById('copy-status');
+
+    function selectPrompt() {
+      promptField.focus();
+      promptField.select();
+      promptField.setSelectionRange(0, promptField.value.length);
+    }
+
+    copyButton.addEventListener('click', async () => {
+      let copied = false;
+      if (window.isSecureContext && navigator.clipboard && navigator.clipboard.writeText) {
+        try {
+          await navigator.clipboard.writeText(promptField.value);
+          copied = true;
+        } catch {
+          // Clipboard access may be disabled for this browser.
+        }
+      }
+      if (!copied) {
+        selectPrompt();
+        try {
+          copied = document.execCommand('copy');
+        } catch {
+          // Leave the complete text selected for the browser's own Copy action.
+        }
+      }
+      if (copied) {
+        copyButton.focus({preventScroll:true});
+        copyStatus.textContent = '已复制完整提示词。粘贴到 Codex 后，填写开头五项。';
+      } else {
+        selectPrompt();
+        copyStatus.textContent = '全文已选中。按 Ctrl+C（Mac 用 ⌘C），或使用手机的“复制”菜单。';
+      }
+    });
+    copyButton.hidden = false;
+  </script>
+</body>
+</html>
