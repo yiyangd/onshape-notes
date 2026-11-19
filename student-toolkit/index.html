@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="复制 Onshape 学生提示词，或下载 Codex Skill，制作自己的中英双语 Word 和逐步动图教程。">
-  <title>学生工具包 · Student Toolkit | Onshape Notes</title>
+  <meta name="description" content="Use a ready-to-copy prompt or a reusable Codex skill to turn your Onshape project into a bilingual Word guide and a website with step-by-step GIFs.">
+  <title>Student Toolkit | Onshape Notes</title>
   <style>
     :root {
       color-scheme: light;
@@ -26,7 +26,6 @@
     .intro { margin: clamp(2rem,5vw,3.5rem) 0 1.65rem; }
     h1,h2,h3,p { margin: 0; }
     h1 { font-size: clamp(2.25rem,5vw,3.65rem); line-height: 1.16; letter-spacing: -.04em; }
-    h1 span { display: inline-block; margin-inline-start: .45em; font-size: .42em; color: #536c6e; font-weight: 600; letter-spacing: -.01em; }
     .lede { margin-top: .85rem; max-width: 46em; }
     .jump { display: flex; gap: 1.2rem; margin-top: .85rem; }
     .layout { display: grid; grid-template-columns: minmax(0, 1.57fr) minmax(0, 1fr); align-items: start; gap: clamp(1rem, 2.4vw, 1.5rem); padding-bottom: clamp(2.5rem,6vw,5rem); }
@@ -56,79 +55,174 @@
       .wrap { width: min(calc(100% - 2rem), 38rem); }
       .layout { grid-template-columns: minmax(0, 1fr); }
       .intro { margin-bottom: 1.25rem; }
-      h1 span { font-size: .46em; }
       textarea { height: 16rem; }
     }
-    @media(max-width: 380px) { h1 span { display: block; margin: .22em 0 0; } }
+
+
+    .zh { display: none; color: #476165; font-size: .94em; }
+    html[data-bilingual="true"] .zh { display: block; }
+    .button .zh { color: inherit; }
+    .button:has(.zh) { flex-direction: column; }
+    .mast .wrap, .mast-nav { flex-wrap: wrap; }
+    .mast-nav { display: flex; gap: .6rem 1rem; align-items: center; }
+    .toggle { display: inline-flex; align-items: center; gap: .45rem; padding: .48rem .72rem;
+      min-height: 44px; border: 1px solid #799b95; border-radius: .4rem; font: inherit;
+      font-size: .9rem; font-weight: 600; cursor: pointer; background: white; color: #184b48; }
+    .toggle[aria-pressed="true"] { background: #e3f2ed; border-color: #176961; }
+    .track { width: 1.8rem; height: 1rem; border-radius: 1rem; border: 1px solid #637c79;
+      background: #f0f5f4; display: inline-flex; align-items: center; padding-inline: 2px; flex: none; }
+    .track::before { content: ""; display: block; width: .64rem; height: .64rem; background: #506561; border-radius: 50%; }
+    .toggle[aria-pressed="true"] .track { justify-content: flex-end; background: #176961; border-color: #176961; }
+    .toggle[aria-pressed="true"] .track::before { background: white; }
+    h1 .zh { font-size: .47em; line-height: 1.4; margin-top: .1em; letter-spacing: 0; }
+    h2 .zh, h3 .zh { font-size: .78em; margin-top: .18em; font-weight: 600; }
+    @media(max-width: 520px) { .mast .wrap { gap: .4rem 1rem; } .mast-nav { gap: .5rem .75rem; } }
   </style>
 </head>
 <body>
   <header class="mast">
-    <div class="wrap"><span class="brand" lang="en">Onshape Notes</span><a href="../">返回项目目录</a></div>
+    <div class="wrap">
+      <span class="brand">Onshape Notes</span>
+      <nav class="mast-nav" aria-label="Toolkit navigation">
+        <a href="../">Projects<span class="zh" lang="zh-CN">项目目录</span></a>
+        <button id="bilingual-toggle" type="button" class="toggle" aria-pressed="false" hidden>
+          <span class="track" aria-hidden="true"></span><span>Bilingual · <span lang="zh-CN">双语</span></span>
+        </button>
+      </nav>
+    </div>
   </header>
   <main class="wrap">
     <header class="intro">
-      <h1>学生工具包 <span lang="en">Student Toolkit</span></h1>
-      <p class="lede">把自己的 Onshape 建模过程做成中英双语 Word 和逐步 GIF 网站。第一次做可以直接复制提示词。经常用同一套流程，可以把 Skill 放进自己的 Codex 项目。</p>
-      <nav class="jump" aria-label="本页导航"><a href="#prompt">使用提示词</a><a href="#skill">下载 Skill</a></nav>
+      <h1>Student Toolkit<span class="zh" lang="zh-CN">学生工具包</span></h1>
+      <p class="lede">Turn your Onshape project into an English–Chinese Word guide and a website with a GIF for each step. Copy the prompt for your first project, or add the skill to Codex to use it again for other models.<span class="zh" lang="zh-CN">把自己的 Onshape 项目做成中英双语 Word 教程和每步配有 GIF 的网站。第一次做可以直接复制提示词，也可以把 Skill 加进 Codex，在以后的建模项目中重复使用。</span></p>
+      <nav class="jump" aria-label="On this page">
+        <a href="#prompt">Use the prompt<span class="zh" lang="zh-CN">使用提示词</span></a>
+        <a href="#skill">Download the skill<span class="zh" lang="zh-CN">下载 Skill</span></a>
+      </nav>
     </header>
     <div class="layout">
       <section id="prompt" aria-labelledby="prompt-title">
-        <h2 id="prompt-title">直接使用提示词</h2>
+        <h2 id="prompt-title">Use the prompt<span class="zh" lang="zh-CN">直接使用提示词</span></h2>
         <ol>
-          <li>用 Codex 打开一个作业文件夹，附上老师给的 PDF、PPT 或自己的录屏。</li>
-          <li>在浏览器中登录自己的 Onshape，打开练习用的文档和 Part Studio。现场演示时，让 Codex 连接到这个浏览器。</li>
-          <li>复制下方全文，粘贴到 Codex 对话框。先填写项目名称和参考材料，再写明当前进度、操作位置和发布方式，然后发送。</li>
+          <li>Open your assignment folder in Codex. Attach your teacher’s slides, a PDF, or your own screen recording.<span class="zh" lang="zh-CN">用 Codex 打开作业文件夹，附上老师给的课件、PDF 或自己的录屏。</span></li>
+          <li>Sign in to Onshape and open the document and Part Studio you want to use. For a live demonstration, connect Codex to that browser.<span class="zh" lang="zh-CN">登录 Onshape，打开要使用的文档和 Part Studio。如需现场演示，请让 Codex 连接到这个浏览器。</span></li>
+          <li>Copy the prompt below into Codex. Fill in the five fields with your project name, reference material, starting point, workspace, and publishing preference. Then send it.<span class="zh" lang="zh-CN">把下面的提示词复制到 Codex。填写项目名称、参考材料、当前进度、操作位置和发布方式，再发送。</span></li>
         </ol>
         <div class="prompt-bar">
-          <label for="prompt-text">完整提示词</label>
-          <button type="button" id="copy-prompt" class="button" hidden>复制完整提示词</button>
+          <label for="prompt-text"><span id="prompt-language">English prompt</span><span class="zh" lang="zh-CN">英中对照提示词</span></label>
+          <button type="button" id="copy-prompt" class="button" hidden>Copy prompt<span class="zh" lang="zh-CN">复制提示词</span></button>
         </div>
-        <textarea id="prompt-text" readonly spellcheck="false">请在我自己的电脑上，按课件完成一个 Onshape 项目，并把实际操作做成一份初学者可以独立跟做的中英双语动图教程。
+        <textarea id="prompt-text" readonly spellcheck="false">Use Onshape on my computer to build the project in my course materials. Turn the work you actually do into an illustrated English–Chinese tutorial that a beginner can follow independently.
 
+Fill in these five fields
+Project name [e.g., Pyramid]
+Course materials [attach the PDF or slides and give the page number or exercise name. Attach a screen recording if you have one.]
+My starting point [a blank Part Studio, the last step I finished, or a finished model I want to practice again]
+Where to work [the names of my open document and Part Studio, or a request to create a new practice document]
+How to share [make a local package by default. To publish, write “Please publish to my GitHub Pages site” and add the repository link.]
+
+How to build and document the project
+1. Read my course materials, then look at my open Onshape document. Check the feature list, the geometry already in place, the units, and the expected finished shape. Continue from my starting point. Label any dimension you choose because the materials leave it unspecified as a “suggested practice value.” If you are unsure which file to edit, ask me to identify it first.
+
+2. Build the model in Onshape and capture the screen as you work. You can also use excerpts from my own recording. For each step, state the goal first. Then say whether to click, double-click, or right-click. Give the English name of the button or menu, the exact face, edge, point, or field to select, where to start and end any drag, what number and unit to enter, which key confirms it, and what should appear. For example, when selecting the Origin on the canvas as the apex, zoom in on the bullseye and the tip of the pointer. Then show the new “Vertex of Origin” entry in Profiles. Choose checks that fit this project.
+
+3. Make a looping GIF of about 1–2 seconds for each step. Show the target, the click, and the result. Split a long series of clicks into smaller steps. Enlarge the relevant area of the actual recording when the target is easy to miss. Label a step with only a still image “Screenshot demonstration.” If a click is missing, record it again when possible. If footage is still missing, keep the step number in both Word and the website and mark it “Recording needed.” Tell me what should be on screen at the start, where to click, and what result to capture. If an error appears, explain how to recognize and fix it. If you cannot control the browser, use my recording to complete the steps you can verify.
+
+4. Create an editable bilingual Word document (.docx). For each step, put the English instructions first and the Chinese translation immediately below. Keep the English button names used in Onshape. Embed the matching GIF below the instructions, followed by one sentence describing what I should see when the step works. Keep the step numbers, values, and units consistent.
+
+5. Create a static website I can share with classmates. Make the home page (index.html) a bilingual project directory. Clicking a project should open its own step-by-step page, such as pyramid/index.html. Include a link back to the directory. Put a playable GIF below each pair of English and Chinese instructions and let students open it at full size. Use the same step numbers and media as the Word document. Support links to individual steps, such as #step-09.
+
+6. Put the Word document, website, and GIFs together in one local package I can share. After extracting it, a student should be able to double-click the site's index.html to open it. Crop account details and private document addresses out of any media I will share with classmates. Test a project card on the home page and the link back to the directory. Check the GIFs, the Word layout, and the site on mobile and desktop. Publish only if I specify a destination. Use that repository, keep the existing lessons, and upload only the site and media suitable for public viewing. After deployment, click the project from the public home page and check that the address bar shows the project's own path, such as /pyramid/. Send me the link you tested.
+</textarea>
+        <template id="bilingual-prompt">Use Onshape on my computer to build the project in my course materials. Turn the work you actually do into an illustrated English–Chinese tutorial that a beginner can follow independently.
+请在我自己的电脑上，按课件完成一个 Onshape 项目，并把实际操作做成一份初学者可以独立跟做的中英双语动图教程。
+
+Fill in these five fields
 【先填这几项】
+Project name [e.g., Pyramid]
 项目名称：【例如 Pyramid】
+Course materials [attach the PDF or slides and give the page number or exercise name. Attach a screen recording if you have one.]
 参考材料：【上传 PDF/PPT，写页码或题目；已有录屏也可附上】
+My starting point [a blank Part Studio, the last step I finished, or a finished model I want to practice again]
 我的起点：【空白 Part Studio／已完成哪一步／已有成品想重练】
+Where to work [the names of my open document and Part Studio, or a request to create a new practice document]
 操作位置：【已打开的文档与 Part Studio 名称，或新建练习文档】
+How to share [make a local package by default. To publish, write “Please publish to my GitHub Pages site” and add the repository link.]
 发布方式：【默认只做本地包；如需发布，写“请发布到我的 GitHub Pages”并填写仓库链接】
 
+How to build and document the project
 【请这样操作并交付】
+1. Read my course materials, then look at my open Onshape document. Check the feature list, the geometry already in place, the units, and the expected finished shape. Continue from my starting point. Label any dimension you choose because the materials leave it unspecified as a “suggested practice value.” If you are unsure which file to edit, ask me to identify it first.
 1. 先读课件，再看我当前打开的 Onshape，确认特征树、已有几何、单位和目标成品。从我的起点继续。课件没给的尺寸如需自定，请标为“练习建议值”。分不清应改哪个文件时，先问我具体文件。
 
+2. Build the model in Onshape and capture the screen as you work. You can also use excerpts from my own recording. For each step, state the goal first. Then say whether to click, double-click, or right-click. Give the English name of the button or menu, the exact face, edge, point, or field to select, where to start and end any drag, what number and unit to enter, which key confirms it, and what should appear. For example, when selecting the Origin on the canvas as the apex, zoom in on the bullseye and the tip of the pointer. Then show the new “Vertex of Origin” entry in Profiles. Choose checks that fit this project.
 2. 请实际操作建模，并在操作时捕捉真实画面；也可以剪我提供的真实录屏。每个步骤写清鼠标单击、双击还是右击，按钮或菜单的英文名，应该点哪个面、边、点或输入框，拖动从哪里到哪里，输入哪个数和单位，按什么键确认，以及做对后看到什么。先说目标再说点击位置。例如，选画布上的 Origin 作锥顶时，放大靶心和鼠标落点，并展示 Profiles 新出现的 Vertex of Origin。按项目需要选择相应的检查点。
 
+3. Make a looping GIF of about 1–2 seconds for each step. Show the target, the click, and the result. Split a long series of clicks into smaller steps. Enlarge the relevant area of the actual recording when the target is easy to miss. Label a step with only a still image “Screenshot demonstration.” If a click is missing, record it again when possible. If footage is still missing, keep the step number in both Word and the website and mark it “Recording needed.” Tell me what should be on screen at the start, where to click, and what result to capture. If an error appears, explain how to recognize and fix it. If you cannot control the browser, use my recording to complete the steps you can verify.
 3. 每步做一个约 1–2 秒的循环 GIF，让学生看清“目标 → 点击 → 结果”。动作太多就拆开，容易点错的位置用真实画面局部放大。仅有截图的步骤标为“截图示范”。如果漏了一次点击，能补录就补录；缺少画面时，在 Word 和网页保留其编号并标“待补录”，告诉我要从哪个画面开始、点什么、录到哪个结果。遇到报错，解释怎样识别和修复。如果暂时无法控制浏览器，先用我的录屏完成能核实的部分。
 
+4. Create an editable bilingual Word document (.docx). For each step, put the English instructions first and the Chinese translation immediately below. Keep the English button names used in Onshape. Embed the matching GIF below the instructions, followed by one sentence describing what I should see when the step works. Keep the step numbers, values, and units consistent.
 4. 生成一份可编辑的双语 Word（.docx）：每步先英文、下方紧跟中文，保留 Onshape 界面的英文按钮名。把对应 GIF 嵌在这一步下面，紧接一句“成功时看到什么”。步骤号、数字和单位前后一致。
 
+5. Create a static website I can share with classmates. Make the home page (index.html) a bilingual project directory. Clicking a project should open its own step-by-step page, such as pyramid/index.html. Include a link back to the directory. Put a playable GIF below each pair of English and Chinese instructions and let students open it at full size. Use the same step numbers and media as the Word document. Support links to individual steps, such as #step-09.
 5. 生成一个可以发给同学的静态网站。首页 index.html 是双语项目目录。点击某个项目才进入它自己的步骤页，例如 pyramid/index.html；项目页可以回到目录。每步的中英文说明下都要能播放对应 GIF，可单独打开放大查看。与 Word 共用步骤号和素材，并支持 #step-09 这样的直达链接。
 
+6. Put the Word document, website, and GIFs together in one local package I can share. After extracting it, a student should be able to double-click the site's index.html to open it. Crop account details and private document addresses out of any media I will share with classmates. Test a project card on the home page and the link back to the directory. Check the GIFs, the Word layout, and the site on mobile and desktop. Publish only if I specify a destination. Use that repository, keep the existing lessons, and upload only the site and media suitable for public viewing. After deployment, click the project from the public home page and check that the address bar shows the project's own path, such as /pyramid/. Send me the link you tested.
 6. 把 Word、网站和 GIF 放进同一份可转发的本地教学包，解压后双击网站的 index.html 就能看。裁去将发给同学的素材里的账号和私人文档地址。实际点首页项目卡、返回目录，并检查 GIF、Word 排版、手机和电脑上的页面。仅当我指定发布目标时，才把网页和适合公开的素材发布到该仓库，保留已有课程。等部署完成，从公开首页点进项目，核对地址栏进入 /项目短名/，再把实测可打开的链接发给我。
-</textarea>
+</template>
         <p id="copy-status" role="status" aria-live="polite" aria-atomic="true"></p>
-        <p class="fine"><a href="downloads/student-prompt.txt" download>下载纯文本提示词（TXT）</a></p>
+        <p class="fine"><a id="prompt-download" href="downloads/student-prompt-en.txt" download>Download prompt (.txt)<span class="zh" lang="zh-CN">下载提示词（TXT）</span></a></p>
       </section>
       <section id="skill" aria-labelledby="skill-title">
-        <h2 id="skill-title">在项目中使用 Skill</h2>
-        <p>把这套流程保存到自己的作业项目，下次换一个模型，只需在对话里写出 Skill 名称。</p>
-        <p class="actions"><a class="button" href="downloads/onshape-project-tutor.zip" download>下载 Skill（ZIP）</a></p>
+        <h2 id="skill-title">Use the Codex skill<span class="zh" lang="zh-CN">在项目中使用 Skill</span></h2>
+        <p>Add the skill to an existing project so you can call it by name when you start another model.<span class="zh" lang="zh-CN">把 Skill 加入已有的项目，之后换一个模型时，就可以直接按名称调用。</span></p>
+        <p class="actions"><a class="button" href="downloads/onshape-project-tutor.zip" download>Download skill (.zip)<span class="zh" lang="zh-CN">下载 Skill（ZIP）</span></a></p>
         <ol>
-          <li>解压下载的 ZIP，找到含有 <code>SKILL.md</code> 的 <code>onshape-project-tutor</code> 文件夹。</li>
-          <li>把这个文件夹放进作业项目的 <code>.agents/skills/</code>。如果目录还没有，可以先创建。放好后的文件路径应为 <code>.agents/skills/onshape-project-tutor/SKILL.md</code>。</li>
-          <li>用 Codex 打开作业项目，附上课件，输入下面这句话，并换成自己的进度。</li>
+          <li>Unzip the file and find the <code>onshape-project-tutor</code> folder that contains <code>SKILL.md</code>.<span class="zh" lang="zh-CN">解压文件，找到包含 <code>SKILL.md</code> 的 <code>onshape-project-tutor</code> 文件夹。</span></li>
+          <li>Place that folder inside <code>.agents/skills/</code> in your project. Create those folders if needed. Check that the file is at <code>.agents/skills/onshape-project-tutor/SKILL.md</code>.<span class="zh" lang="zh-CN">把整个文件夹放入项目的 <code>.agents/skills/</code> 中。如果目录还没有，可以先创建。确认文件路径是 <code>.agents/skills/onshape-project-tutor/SKILL.md</code>。</span></li>
+          <li>Open the project in Codex and attach your lesson materials. Adapt this example to your starting point.<span class="zh" lang="zh-CN">在 Codex 中打开项目并附上课件。把下面示例中的起点换成自己的实际进度。</span></li>
         </ol>
-        <p class="example">请用 <code>$onshape-project-tutor</code> 做我附上的 Onshape 作业。我已经画好正方形底面，请从 Loft 开始，做成中英双语 Word 和逐步 GIF 网站。这次只做本地包。</p>
-        <h3>从新文件夹开始</h3>
-        <p>完整工具包里有使用说明、提示词和已放好位置的 Skill。把整包解压到新的作业文件夹，再用 Codex 打开即可。</p>
-        <p><a href="downloads/onshape-student-kit.zip" download>下载完整学生工具包（ZIP）</a></p>
+        <p class="example">Use <code>$onshape-project-tutor</code> for my attached Onshape assignment. My square base is ready. Start with Loft and make a bilingual Word guide and a GIF tutorial website. Create a local package only.<span class="zh" lang="zh-CN">请用 <code>$onshape-project-tutor</code> 做我附上的 Onshape 作业。我已经画好正方形底面，请从 Loft 开始，做成双语 Word 和逐步 GIF 网站。这次只做本地包。</span></p>
+        <h3>Start in a new folder<span class="zh" lang="zh-CN">从新文件夹开始</span></h3>
+        <p>The full toolkit includes the ready-to-use skill and the original Chinese quick-start notes and prompt. Unzip it into a new assignment folder and open that folder in Codex. Use the prompt download on this page for an English or bilingual copy.<span class="zh" lang="zh-CN">完整工具包包含已放好位置的 Skill、原版中文说明和中文提示词。把整包解压到新的作业文件夹，再用 Codex 打开。需要英文或英中对照提示词时，可使用本页的提示词下载链接。</span></p>
+        <p><a href="downloads/onshape-student-kit.zip" download>Download the full student toolkit (.zip)<span class="zh" lang="zh-CN">下载完整学生工具包（ZIP）</span></a></p>
       </section>
     </div>
   </main>
   <script>
+    const toggle = document.getElementById('bilingual-toggle');
     const promptField = document.getElementById('prompt-text');
+    const englishPrompt = promptField.defaultValue;
+    const bilingualPrompt = document.getElementById('bilingual-prompt').content.textContent;
+    const promptLanguage = document.getElementById('prompt-language');
+    const promptDownload = document.getElementById('prompt-download');
     const copyButton = document.getElementById('copy-prompt');
     const copyStatus = document.getElementById('copy-status');
+    const preferenceKey = 'onshape-notes.student-toolkit.bilingual';
+
+    function setBilingual(enabled) {
+      document.documentElement.dataset.bilingual = String(enabled);
+      toggle.setAttribute('aria-pressed', String(enabled));
+      promptField.value = enabled ? bilingualPrompt : englishPrompt;
+      promptField.scrollTop = 0;
+      promptLanguage.textContent = enabled ? 'English–Chinese prompt' : 'English prompt';
+      promptDownload.href = enabled ? 'downloads/student-prompt-bilingual.txt' : 'downloads/student-prompt-en.txt';
+      copyStatus.textContent = '';
+    }
+
+    let initialChoice = false;
+    try {
+      initialChoice = localStorage.getItem(preferenceKey) === 'true';
+    } catch {
+      // Offline files and private sessions may block preference storage.
+    }
+    setBilingual(initialChoice);
+    toggle.hidden = false;
+    toggle.addEventListener('click', () => {
+      const enabled = toggle.getAttribute('aria-pressed') !== 'true';
+      setBilingual(enabled);
+      try { localStorage.setItem(preferenceKey, String(enabled)); } catch { /* Keep this tab's choice. */ }
+    });
 
     function selectPrompt() {
       promptField.focus();
@@ -136,30 +230,39 @@
       promptField.setSelectionRange(0, promptField.value.length);
     }
 
+    function showFeedback(english, chinese) {
+      copyStatus.textContent = english;
+      if (toggle.getAttribute('aria-pressed') === 'true') {
+        const translation = document.createElement('span');
+        translation.className = 'zh';
+        translation.lang = 'zh-CN';
+        translation.textContent = chinese;
+        copyStatus.appendChild(translation);
+      }
+    }
+
     copyButton.addEventListener('click', async () => {
+      const text = promptField.value;
       let copied = false;
       if (window.isSecureContext && navigator.clipboard && navigator.clipboard.writeText) {
         try {
-          await navigator.clipboard.writeText(promptField.value);
+          await navigator.clipboard.writeText(text);
           copied = true;
         } catch {
-          // Clipboard access may be disabled for this browser.
+          // Some browsers require the selection-based copy action below.
         }
       }
+      if (text !== promptField.value) return;
       if (!copied) {
         selectPrompt();
-        try {
-          copied = document.execCommand('copy');
-        } catch {
-          // Leave the complete text selected for the browser's own Copy action.
-        }
+        try { copied = document.execCommand('copy'); } catch { /* Keep the selection for manual copy. */ }
       }
       if (copied) {
-        copyButton.focus({preventScroll:true});
-        copyStatus.textContent = '已复制完整提示词。粘贴到 Codex 后，填写开头五项。';
+        copyButton.focus({preventScroll: true});
+        showFeedback('Prompt copied. Paste it into Codex and fill in the five fields.', '提示词已复制。粘贴到 Codex 后填写开头的五项。');
       } else {
         selectPrompt();
-        copyStatus.textContent = '全文已选中。按 Ctrl+C（Mac 用 ⌘C），或使用手机的“复制”菜单。';
+        showFeedback('The full prompt is selected. Press Ctrl+C (⌘C on Mac), or tap Copy on your phone.', '全文已选中。按 Ctrl+C（Mac 用 ⌘C），或使用手机的“复制”菜单。');
       }
     });
     copyButton.hidden = false;

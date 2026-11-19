@@ -1,0 +1,35 @@
+Use Onshape on my computer to build the project in my course materials. Turn the work you actually do into an illustrated English–Chinese tutorial that a beginner can follow independently.
+请在我自己的电脑上，按课件完成一个 Onshape 项目，并把实际操作做成一份初学者可以独立跟做的中英双语动图教程。
+
+Fill in these five fields
+【先填这几项】
+Project name [e.g., Pyramid]
+项目名称：【例如 Pyramid】
+Course materials [attach the PDF or slides and give the page number or exercise name. Attach a screen recording if you have one.]
+参考材料：【上传 PDF/PPT，写页码或题目；已有录屏也可附上】
+My starting point [a blank Part Studio, the last step I finished, or a finished model I want to practice again]
+我的起点：【空白 Part Studio／已完成哪一步／已有成品想重练】
+Where to work [the names of my open document and Part Studio, or a request to create a new practice document]
+操作位置：【已打开的文档与 Part Studio 名称，或新建练习文档】
+How to share [make a local package by default. To publish, write “Please publish to my GitHub Pages site” and add the repository link.]
+发布方式：【默认只做本地包；如需发布，写“请发布到我的 GitHub Pages”并填写仓库链接】
+
+How to build and document the project
+【请这样操作并交付】
+1. Read my course materials, then look at my open Onshape document. Check the feature list, the geometry already in place, the units, and the expected finished shape. Continue from my starting point. Label any dimension you choose because the materials leave it unspecified as a “suggested practice value.” If you are unsure which file to edit, ask me to identify it first.
+1. 先读课件，再看我当前打开的 Onshape，确认特征树、已有几何、单位和目标成品。从我的起点继续。课件没给的尺寸如需自定，请标为“练习建议值”。分不清应改哪个文件时，先问我具体文件。
+
+2. Build the model in Onshape and capture the screen as you work. You can also use excerpts from my own recording. For each step, state the goal first. Then say whether to click, double-click, or right-click. Give the English name of the button or menu, the exact face, edge, point, or field to select, where to start and end any drag, what number and unit to enter, which key confirms it, and what should appear. For example, when selecting the Origin on the canvas as the apex, zoom in on the bullseye and the tip of the pointer. Then show the new “Vertex of Origin” entry in Profiles. Choose checks that fit this project.
+2. 请实际操作建模，并在操作时捕捉真实画面；也可以剪我提供的真实录屏。每个步骤写清鼠标单击、双击还是右击，按钮或菜单的英文名，应该点哪个面、边、点或输入框，拖动从哪里到哪里，输入哪个数和单位，按什么键确认，以及做对后看到什么。先说目标再说点击位置。例如，选画布上的 Origin 作锥顶时，放大靶心和鼠标落点，并展示 Profiles 新出现的 Vertex of Origin。按项目需要选择相应的检查点。
+
+3. Make a looping GIF of about 1–2 seconds for each step. Show the target, the click, and the result. Split a long series of clicks into smaller steps. Enlarge the relevant area of the actual recording when the target is easy to miss. Label a step with only a still image “Screenshot demonstration.” If a click is missing, record it again when possible. If footage is still missing, keep the step number in both Word and the website and mark it “Recording needed.” Tell me what should be on screen at the start, where to click, and what result to capture. If an error appears, explain how to recognize and fix it. If you cannot control the browser, use my recording to complete the steps you can verify.
+3. 每步做一个约 1–2 秒的循环 GIF，让学生看清“目标 → 点击 → 结果”。动作太多就拆开，容易点错的位置用真实画面局部放大。仅有截图的步骤标为“截图示范”。如果漏了一次点击，能补录就补录；缺少画面时，在 Word 和网页保留其编号并标“待补录”，告诉我要从哪个画面开始、点什么、录到哪个结果。遇到报错，解释怎样识别和修复。如果暂时无法控制浏览器，先用我的录屏完成能核实的部分。
+
+4. Create an editable bilingual Word document (.docx). For each step, put the English instructions first and the Chinese translation immediately below. Keep the English button names used in Onshape. Embed the matching GIF below the instructions, followed by one sentence describing what I should see when the step works. Keep the step numbers, values, and units consistent.
+4. 生成一份可编辑的双语 Word（.docx）：每步先英文、下方紧跟中文，保留 Onshape 界面的英文按钮名。把对应 GIF 嵌在这一步下面，紧接一句“成功时看到什么”。步骤号、数字和单位前后一致。
+
+5. Create a static website I can share with classmates. Make the home page (index.html) a bilingual project directory. Clicking a project should open its own step-by-step page, such as pyramid/index.html. Include a link back to the directory. Put a playable GIF below each pair of English and Chinese instructions and let students open it at full size. Use the same step numbers and media as the Word document. Support links to individual steps, such as #step-09.
+5. 生成一个可以发给同学的静态网站。首页 index.html 是双语项目目录。点击某个项目才进入它自己的步骤页，例如 pyramid/index.html；项目页可以回到目录。每步的中英文说明下都要能播放对应 GIF，可单独打开放大查看。与 Word 共用步骤号和素材，并支持 #step-09 这样的直达链接。
+
+6. Put the Word document, website, and GIFs together in one local package I can share. After extracting it, a student should be able to double-click the site's index.html to open it. Crop account details and private document addresses out of any media I will share with classmates. Test a project card on the home page and the link back to the directory. Check the GIFs, the Word layout, and the site on mobile and desktop. Publish only if I specify a destination. Use that repository, keep the existing lessons, and upload only the site and media suitable for public viewing. After deployment, click the project from the public home page and check that the address bar shows the project's own path, such as /pyramid/. Send me the link you tested.
+6. 把 Word、网站和 GIF 放进同一份可转发的本地教学包，解压后双击网站的 index.html 就能看。裁去将发给同学的素材里的账号和私人文档地址。实际点首页项目卡、返回目录，并检查 GIF、Word 排版、手机和电脑上的页面。仅当我指定发布目标时，才把网页和适合公开的素材发布到该仓库，保留已有课程。等部署完成，从公开首页点进项目，核对地址栏进入 /项目短名/，再把实测可打开的链接发给我。

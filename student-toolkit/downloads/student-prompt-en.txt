@@ -1,0 +1,21 @@
+Use Onshape on my computer to build the project in my course materials. Turn the work you actually do into an illustrated English–Chinese tutorial that a beginner can follow independently.
+
+Fill in these five fields
+Project name [e.g., Pyramid]
+Course materials [attach the PDF or slides and give the page number or exercise name. Attach a screen recording if you have one.]
+My starting point [a blank Part Studio, the last step I finished, or a finished model I want to practice again]
+Where to work [the names of my open document and Part Studio, or a request to create a new practice document]
+How to share [make a local package by default. To publish, write “Please publish to my GitHub Pages site” and add the repository link.]
+
+How to build and document the project
+1. Read my course materials, then look at my open Onshape document. Check the feature list, the geometry already in place, the units, and the expected finished shape. Continue from my starting point. Label any dimension you choose because the materials leave it unspecified as a “suggested practice value.” If you are unsure which file to edit, ask me to identify it first.
+
+2. Build the model in Onshape and capture the screen as you work. You can also use excerpts from my own recording. For each step, state the goal first. Then say whether to click, double-click, or right-click. Give the English name of the button or menu, the exact face, edge, point, or field to select, where to start and end any drag, what number and unit to enter, which key confirms it, and what should appear. For example, when selecting the Origin on the canvas as the apex, zoom in on the bullseye and the tip of the pointer. Then show the new “Vertex of Origin” entry in Profiles. Choose checks that fit this project.
+
+3. Make a looping GIF of about 1–2 seconds for each step. Show the target, the click, and the result. Split a long series of clicks into smaller steps. Enlarge the relevant area of the actual recording when the target is easy to miss. Label a step with only a still image “Screenshot demonstration.” If a click is missing, record it again when possible. If footage is still missing, keep the step number in both Word and the website and mark it “Recording needed.” Tell me what should be on screen at the start, where to click, and what result to capture. If an error appears, explain how to recognize and fix it. If you cannot control the browser, use my recording to complete the steps you can verify.
+
+4. Create an editable bilingual Word document (.docx). For each step, put the English instructions first and the Chinese translation immediately below. Keep the English button names used in Onshape. Embed the matching GIF below the instructions, followed by one sentence describing what I should see when the step works. Keep the step numbers, values, and units consistent.
+
+5. Create a static website I can share with classmates. Make the home page (index.html) a bilingual project directory. Clicking a project should open its own step-by-step page, such as pyramid/index.html. Include a link back to the directory. Put a playable GIF below each pair of English and Chinese instructions and let students open it at full size. Use the same step numbers and media as the Word document. Support links to individual steps, such as #step-09.
+
+6. Put the Word document, website, and GIFs together in one local package I can share. After extracting it, a student should be able to double-click the site's index.html to open it. Crop account details and private document addresses out of any media I will share with classmates. Test a project card on the home page and the link back to the directory. Check the GIFs, the Word layout, and the site on mobile and desktop. Publish only if I specify a destination. Use that repository, keep the existing lessons, and upload only the site and media suitable for public viewing. After deployment, click the project from the public home page and check that the address bar shows the project's own path, such as /pyramid/. Send me the link you tested.
