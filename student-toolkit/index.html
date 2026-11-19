@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Use a ready-to-copy prompt or a reusable Codex skill to turn your Onshape project into a bilingual Word guide and a website with step-by-step GIFs.">
   <title>Student Toolkit | Onshape Notes</title>
+  <link rel="stylesheet" href="../language.css">
+  <script defer src="../language.js"></script>
   <style>
     :root {
       color-scheme: light;
@@ -59,21 +61,11 @@
     }
 
 
-    .zh { display: none; color: #476165; font-size: .94em; }
-    html[data-bilingual="true"] .zh { display: block; }
+    .zh { color: #476165; font-size: .94em; }
     .button .zh { color: inherit; }
     .button:has(.zh) { flex-direction: column; }
     .mast .wrap, .mast-nav { flex-wrap: wrap; }
     .mast-nav { display: flex; gap: .6rem 1rem; align-items: center; }
-    .toggle { display: inline-flex; align-items: center; gap: .45rem; padding: .48rem .72rem;
-      min-height: 44px; border: 1px solid #799b95; border-radius: .4rem; font: inherit;
-      font-size: .9rem; font-weight: 600; cursor: pointer; background: white; color: #184b48; }
-    .toggle[aria-pressed="true"] { background: #e3f2ed; border-color: #176961; }
-    .track { width: 1.8rem; height: 1rem; border-radius: 1rem; border: 1px solid #637c79;
-      background: #f0f5f4; display: inline-flex; align-items: center; padding-inline: 2px; flex: none; }
-    .track::before { content: ""; display: block; width: .64rem; height: .64rem; background: #506561; border-radius: 50%; }
-    .toggle[aria-pressed="true"] .track { justify-content: flex-end; background: #176961; border-color: #176961; }
-    .toggle[aria-pressed="true"] .track::before { background: white; }
     h1 .zh { font-size: .47em; line-height: 1.4; margin-top: .1em; letter-spacing: 0; }
     h2 .zh, h3 .zh { font-size: .78em; margin-top: .18em; font-weight: 600; }
     @media(max-width: 520px) { .mast .wrap { gap: .4rem 1rem; } .mast-nav { gap: .5rem .75rem; } }
@@ -198,30 +190,13 @@ How to build and document the project
     const promptDownload = document.getElementById('prompt-download');
     const copyButton = document.getElementById('copy-prompt');
     const copyStatus = document.getElementById('copy-status');
-    const preferenceKey = 'onshape-notes.student-toolkit.bilingual';
-
-    function setBilingual(enabled) {
-      document.documentElement.dataset.bilingual = String(enabled);
-      toggle.setAttribute('aria-pressed', String(enabled));
+    document.addEventListener('onshape-language-change', event => {
+      const enabled = event.detail;
       promptField.value = enabled ? bilingualPrompt : englishPrompt;
       promptField.scrollTop = 0;
       promptLanguage.textContent = enabled ? 'English–Chinese prompt' : 'English prompt';
       promptDownload.href = enabled ? 'downloads/student-prompt-bilingual.txt' : 'downloads/student-prompt-en.txt';
       copyStatus.textContent = '';
-    }
-
-    let initialChoice = false;
-    try {
-      initialChoice = localStorage.getItem(preferenceKey) === 'true';
-    } catch {
-      // Offline files and private sessions may block preference storage.
-    }
-    setBilingual(initialChoice);
-    toggle.hidden = false;
-    toggle.addEventListener('click', () => {
-      const enabled = toggle.getAttribute('aria-pressed') !== 'true';
-      setBilingual(enabled);
-      try { localStorage.setItem(preferenceKey, String(enabled)); } catch { /* Keep this tab's choice. */ }
     });
 
     function selectPrompt() {

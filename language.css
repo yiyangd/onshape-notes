@@ -1,0 +1,69 @@
+html:not([data-bilingual="true"]) .zh,
+#bilingual-toggle[hidden] {
+  display: none !important;
+}
+
+html[data-bilingual="true"] .zh {
+  display: block;
+}
+
+#bilingual-toggle {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  min-height: 44px;
+  padding: .48rem .72rem;
+  border: 1px solid #799b95;
+  border-radius: .4rem;
+  color: #184b48;
+  background: white;
+  font: inherit;
+  font-size: .9rem;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+#bilingual-toggle:focus-visible {
+  outline: 3px solid #167671;
+  outline-offset: 3px;
+}
+
+#bilingual-toggle[aria-pressed="true"] {
+  background: #e3f2ed;
+  border-color: #176961;
+}
+
+#bilingual-toggle .track {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  width: 1.8rem;
+  height: 1rem;
+  padding-inline: 2px;
+  border: 1px solid #637c79;
+  border-radius: 1rem;
+  background: #f0f5f4;
+}
+
+#bilingual-toggle .track::before {
+  content: "";
+  width: .64rem;
+  height: .64rem;
+  background: #506561;
+  border-radius: 50%;
+}
+
+#bilingual-toggle[aria-pressed="true"] .track {
+  justify-content: flex-end;
+  border-color: #176961;
+  background: #176961;
+}
+
+#bilingual-toggle[aria-pressed="true"] .track::before {
+  background: white;
+}
