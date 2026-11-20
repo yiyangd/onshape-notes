@@ -1,0 +1,413 @@
+FeatureScript 3112;
+import(path : "onshape/std/common.fs", version : "3112.0");
+
+export enum PartTwoModel
+{
+    annotation { "Name" : "Pyramid" }
+    PYRAMID,
+    annotation { "Name" : "Pawn" }
+    PAWN,
+    annotation { "Name" : "Pool Rail" }
+    RAIL,
+    annotation { "Name" : "Coffee Cup" }
+    CUP,
+    annotation { "Name" : "Pipe Reducer" }
+    REDUCER,
+    annotation { "Name" : "Bookshelf" }
+    SHELF,
+    annotation { "Name" : "Cube Transfer" }
+    TRANSFER
+}
+
+export enum PartTwoStage
+{
+    annotation { "Name" : "1 - Layout" } LAYOUT,
+    annotation { "Name" : "2 - Build" } BUILD,
+    annotation { "Name" : "3 - Finish" } FINISH
+}
+
+export enum PartTwoPose
+{
+    annotation { "Name" : "Pickup - 0 in" } PICKUP,
+    annotation { "Name" : "Lift - 0.45 in" } LIFT,
+    annotation { "Name" : "Carry - 6 in" } CARRY,
+    annotation { "Name" : "Land - 0 in lift" } LAND
+}
+function p2Pyramid(context is Context, id is Id, stage is number)
+{
+    var basePlane = plane(vector(0, 0, -5) * inch, vector(0, 0, 1), vector(1, 0, 0));
+    var base = newSketchOnPlane(context, id + "base", { "sketchPlane" : basePlane });
+    skRectangle(base, "square", { "firstCorner" : vector(-2.5, -2.5) * inch,
+        "secondCorner" : vector(2.5, 2.5) * inch });
+    skSolve(base);
+    if (stage == 1)
+        return;
+    var top = newSketchOnPlane(context, id + "top", {
+        "sketchPlane" : plane(vector(0, 0, 0) * inch, vector(0, 0, 1), vector(1, 0, 0)) });
+    skPoint(top, "apex", { "position" : vector(0, 0) * inch });
+    skSolve(top);
+    if (stage == 2)
+        return;
+    opLoft(context, id + "loft", { "profileSubqueries" : [
+        qSketchRegion(id + "base"), qCreatedBy(id + "top", EntityType.VERTEX) ] });
+    opDeleteBodies(context, id + "cleanup", { "entities" :
+        qUnion([qCreatedBy(id + "base", EntityType.BODY), qCreatedBy(id + "top", EntityType.BODY)]) });
+    setProperty(context, { "entities" : qCreatedBy(id + "loft", EntityType.BODY),
+        "propertyType" : PropertyType.NAME, "value" : "Pyramid" });
+}
+
+// Sketch coordinates in this group are (horizontal distance, height) in inches.
+function p2AFront(context is Context, id is Id)
+{
+    return newSketchOnPlane(context, id, {
+        "sketchPlane" : plane(vector(0, 0, 0) * inch, vector(0, -1, 0), vector(1, 0, 0))
+    });
+}
+
+function p2ALine(sketch is Sketch, name is string, start is Vector, end is Vector)
+{
+    skLineSegment(sketch, name, { "start" : start * inch, "end" : end * inch });
+}
+
+function p2AArc(sketch is Sketch, name is string, start is Vector, mid is Vector, end is Vector)
+{
+    skArc(sketch, name, { "start" : start * inch, "mid" : mid * inch, "end" : end * inch });
+}
+
+function p2ARevolve(context is Context, id is Id, profiles is Query)
+{
+    opRevolve(context, id, {
+        "entities" : profiles,
+        "axis" : line(vector(0, 0, 0) * inch, vector(0, 0, 1)),
+        "angleForward" : 360 * degree
+    });
+}
+
+function p2Pawn(context is Context, id is Id, stage is number)
+{
+    const sectionId = id + "pawnSection";
+    const section = p2AFront(context, sectionId);
+    p2ALine(section, "bottom", vector(0, 0), vector(0.55, 0));
+    p2AArc(section, "foot", vector(0.55, 0), vector(0.585, 0.08), vector(0.54, 0.145));
+    p2AArc(section, "pedestal", vector(0.54, 0.145), vector(0.53, 0.25), vector(0.39, 0.39));
+    p2AArc(section, "baseBead", vector(0.39, 0.39), vector(0.415, 0.44), vector(0.365, 0.51));
+    p2AArc(section, "stem", vector(0.365, 0.51), vector(0.24, 0.86), vector(0.20, 1.32));
+    p2AArc(section, "collar", vector(0.20, 1.32), vector(0.315, 1.33), vector(0.34, 1.39));
+    p2AArc(section, "collarCrown", vector(0.34, 1.39), vector(0.30, 1.46), vector(0.174, 1.528));
+    // The last arc belongs to a 0.29-inch radius circle centered at (0, 1.76).
+    p2AArc(section, "head", vector(0.174, 1.528), vector(0.29, 1.76), vector(0, 2.05));
+    if (stage >= 2)
+    {
+        p2ALine(section, "axis", vector(0, 2.05), vector(0, 0));
+    }
+    skSolve(section);
+    if (stage >= 3)
+    {
+        p2ARevolve(context, id + "pawnRevolve", qSketchRegion(sectionId));
+        opDeleteBodies(context, id + "clearPawnSketch", {
+            "entities" : qCreatedBy(sectionId, EntityType.BODY)
+        });
+    }
+}
+
+function p2Rail(context is Context, id is Id, stage is number)
+{
+    const pathId = id + "railPath";
+    const path = p2AFront(context, pathId);
+    const topTangent = vector(-0.13428525255, 1.88163001458);
+    const leftTangent = vector(-2.08057115153, 1.33897800875);
+    p2ALine(path, "rightLeg", vector(0.5, 0), vector(0.5, 1.4));
+    p2AArc(path, "upperBend", vector(0.5, 1.4), vector(0, 1.9), topTangent);
+    p2ALine(path, "slope", topTangent, leftTangent);
+    p2AArc(path, "leftBend", leftTangent, vector(-2.3, 1.05), vector(-2, 0.75));
+    p2ALine(path, "lowerRun", vector(-2, 0.75), vector(-1, 0.75));
+    p2AArc(path, "lowerBend", vector(-1, 0.75), vector(-0.73483495706, 0.64016504294), vector(-0.625, 0.375));
+    p2ALine(path, "shortLeg", vector(-0.625, 0.375), vector(-0.625, 0));
+    skSolve(path);
+    if (stage < 2)
+    {
+        return;
+    }
+    const sectionId = id + "railCircle";
+    const section = newSketchOnPlane(context, sectionId, {
+        "sketchPlane" : plane(vector(0, 0, 0) * inch, vector(0, 0, 1), vector(1, 0, 0))
+    });
+    skCircle(section, "round", { "center" : vector(0.5, 0) * inch, "radius" : 0.05 * inch });
+    skSolve(section);
+    if (stage >= 3)
+    {
+        opSweep(context, id + "railSweep", {
+            "profiles" : qSketchRegion(sectionId),
+            "path" : qCreatedBy(pathId, EntityType.EDGE)
+        });
+        opDeleteBodies(context, id + "clearRailSketches", {
+            "entities" : qUnion([qCreatedBy(sectionId, EntityType.BODY), qCreatedBy(pathId, EntityType.BODY)])
+        });
+    }
+}
+
+function p2Cup(context is Context, id is Id, stage is number)
+{
+    const bowlSectionId = id + "bowlSection";
+    const bowlSection = p2AFront(context, bowlSectionId);
+    p2ALine(bowlSection, "bottom", vector(0, 0), vector(0.5, 0));
+    p2AArc(bowlSection, "outside", vector(0.5, 0), vector(0.74, 0.68), vector(0.6, 1.25));
+    p2ALine(bowlSection, "lip", vector(0.6, 1.25), vector(0.5, 1.25));
+    p2AArc(bowlSection, "inside", vector(0.5, 1.25), vector(0.634, 0.68), vector(0.5, 0.1));
+    p2ALine(bowlSection, "insideFloor", vector(0.5, 0.1), vector(0, 0.1));
+    p2ALine(bowlSection, "axis", vector(0, 0.1), vector(0, 0));
+    skSolve(bowlSection);
+    if (stage < 2)
+    {
+        return;
+    }
+    const bowlId = id + "bowlRevolve";
+    p2ARevolve(context, bowlId, qSketchRegion(bowlSectionId));
+    opDeleteBodies(context, id + "clearBowlSketch", {
+        "entities" : qCreatedBy(bowlSectionId, EntityType.BODY)
+    });
+    const pathId = id + "handlePath";
+    const path = p2AFront(context, pathId);
+    p2AArc(path, "handleArc", vector(0.62, 0.26), vector(1.03, 0.67), vector(0.62, 1.08));
+    skSolve(path);
+    const sectionId = id + "handleEllipse";
+    const section = newSketchOnPlane(context, sectionId, {
+        "sketchPlane" : plane(vector(0.62, 0, 0) * inch, vector(1, 0, 0), vector(0, 1, 0))
+    });
+    skEllipse(section, "ellipse", {
+        "center" : vector(0, 0.26) * inch, "majorAxis" : vector(0, 1),
+        "majorRadius" : 0.065 * inch, "minorRadius" : 0.05 * inch
+    });
+    skSolve(section);
+    if (stage >= 3)
+    {
+        const sweepId = id + "handleSweep";
+        opSweep(context, sweepId, {
+            "profiles" : qSketchRegion(sectionId), "path" : qCreatedBy(pathId, EntityType.EDGE)
+        });
+        opBoolean(context, id + "joinHandle", {
+            "tools" : qUnion([qCreatedBy(bowlId, EntityType.BODY), qCreatedBy(sweepId, EntityType.BODY)]),
+            "operationType" : BooleanOperationType.UNION
+        });
+        opDeleteBodies(context, id + "clearHandleSketches", {
+            "entities" : qUnion([qCreatedBy(pathId, EntityType.BODY), qCreatedBy(sectionId, EntityType.BODY)])
+        });
+    }
+}
+
+// Axial dimensions below are in inches. Drawing dimensions are documented in the guide.
+function p2bName(context is Context, part is Query, label is string, shade is Color)
+{
+    setProperty(context, { "entities" : part, "propertyType" : PropertyType.NAME, "value" : label });
+    setProperty(context, { "entities" : part, "propertyType" : PropertyType.APPEARANCE, "value" : shade });
+}
+
+function p2bBox(context is Context, id is Id, low is Vector, high is Vector) returns Query
+{
+    fCuboid(context, id, { "corner1" : low * inch, "corner2" : high * inch });
+    return qCreatedBy(id, EntityType.BODY);
+}
+
+function p2bPanel(context is Context, id is Id, low is Vector, high is Vector, label is string, shade is Color)
+{
+    const board = p2bBox(context, id, low, high);
+    p2bName(context, board, label, shade);
+}
+
+function p2bDisk(context is Context, id is Id, z is number, r is number)
+{
+    const sketch = newSketchOnPlane(context, id, {
+                "sketchPlane" : plane(vector(0, 0, z) * inch, vector(0, 0, 1), vector(1, 0, 0))
+            });
+    skCircle(sketch, "circle", { "center" : vector(0, 0) * inch, "radius" : r * inch });
+    skSolve(sketch);
+}
+
+function p2Reducer(context is Context, id is Id, stage is number)
+{
+    // Two closed circular sections. Each side guide has short straight end lands.
+    p2bDisk(context, id + "inlet", 0, 1);
+    p2bDisk(context, id + "outlet", 3, 0.5);
+    var guides = [];
+    for (var sign in [-1, 1])
+    {
+        const guideId = id + (sign < 0 ? "leftGuide" : "rightGuide");
+        opPolyline(context, guideId, {
+                    "points" : [
+                        vector(sign, 0, 0) * inch, vector(sign, 0, 0.5) * inch,
+                        vector(sign * 0.5, 0, 2.5) * inch, vector(sign * 0.5, 0, 3) * inch
+                    ],
+                    "bendRadii" : [1 * inch, 1 * inch]
+                });
+        guides = append(guides, qCreatedBy(guideId, EntityType.EDGE));
+    }
+    if (stage < 2)
+        return;
+
+    opLoft(context, id + "outerLoft", {
+                "profileSubqueries" : [qSketchRegion(id + "inlet"), qSketchRegion(id + "outlet")],
+                "guideSubqueries" : guides,
+                "bodyType" : ToolBodyType.SOLID
+            });
+    const wall = qCreatedBy(id + "outerLoft", EntityType.BODY);
+    opDeleteBodies(context, id + "clearProfiles", {
+                "entities" : qUnion([
+                    qCreatedBy(id + "inlet", EntityType.BODY), qCreatedBy(id + "outlet", EntityType.BODY),
+                    qCreatedBy(id + "leftGuide", EntityType.BODY), qCreatedBy(id + "rightGuide", EntityType.BODY)])
+            });
+    if (stage >= 3)
+    {
+        const faces = qOwnedByBody(wall, EntityType.FACE);
+        const ends = qUnion([
+                    qContainsPoint(faces, vector(0, 0, 0) * inch),
+                    qContainsPoint(faces, vector(0, 0, 3) * inch)
+                ]);
+        opShell(context, id + "openBothEnds", { "entities" : ends, "thickness" : -0.1 * inch });
+    }
+    p2bName(context, wall, "Pipe reducer", color(0.43, 0.58, 0.68));
+}
+
+function p2Shelf(context is Context, id is Id, stage is number)
+{
+    // Front is y=0. The thin back spans the full outside width and height.
+    const sideColor = color(0.62, 0.40, 0.24);
+    const shelfColor = color(0.80, 0.58, 0.35);
+    const backColor = color(0.51, 0.35, 0.23);
+    p2bPanel(context, id + "left", vector(0, 0, 0), vector(0.75, 9.25, 47.5), "Left side", sideColor);
+    p2bPanel(context, id + "right", vector(24, 0, 0), vector(24.75, 9.25, 47.5), "Right side", sideColor);
+    if (stage < 2)
+        return;
+    p2bPanel(context, id + "back", vector(0, 9.25, 0), vector(24.75, 9.5, 47.5), "Back", backColor);
+    p2bPanel(context, id + "bottom", vector(0.75, 0, 1.75), vector(24, 9.25, 2.5), "Bottom board", shelfColor);
+    p2bPanel(context, id + "top", vector(0.75, 0, 46.75), vector(24, 9.25, 47.5), "Top board", shelfColor);
+    p2bPanel(context, id + "plinth", vector(0.75, 0.25, 0), vector(24, 1, 1.75), "Recessed front plinth", sideColor);
+    if (stage < 3)
+        return;
+    // Clear height is (46.75 - 2.5 - 3*0.75)/4 = 10.5 inches.
+    for (var i in [1, 2, 3])
+    {
+        const z = 2.5 + i * 10.5 + (i - 1) * 0.75;
+        p2bPanel(context, id + ("shelf" ~ i), vector(0.75, 0, z), vector(24, 9.25, z + 0.75),
+                 "Shelf " ~ i, shelfColor);
+    }
+}
+
+function p2bCylinder(context is Context, id is Id, x is number, y is number,
+                     low is number, high is number, radius is number) returns Query
+{
+    fCylinder(context, id, { "bottomCenter" : vector(x, y, low) * inch,
+                "topCenter" : vector(x, y, high) * inch, "radius" : radius * inch });
+    return qCreatedBy(id, EntityType.BODY);
+}
+
+// travel and lift are unitless counts of inches. The stationary beam runs along X.
+function p2TransferPose(context is Context, id is Id, stage is number, travel is number, lift is number)
+{
+    const x = -3 + travel;
+    const frameColor = color(0.22, 0.36, 0.43);
+    const standColor = color(0.52, 0.61, 0.63);
+    const movingColor = color(0.94, 0.52, 0.15);
+    p2bPanel(context, id + "base", vector(-5, -1.6, 0), vector(5, 1.2, 0.25), "Base", frameColor);
+    for (var center in [-3, 3])
+    {
+        const standId = id + (center < 0 ? "sourceStand" : "targetStand");
+        p2bPanel(context, standId, vector(center - 0.35, -0.85, 0.25),
+                 vector(center + 0.35, -0.15, 1.75), center < 0 ? "Pickup stand" : "Delivery stand", standColor);
+    }
+    const cubeX = stage < 3 ? -3 : x;
+    const cubeZ = stage < 3 ? 1.75 : 1.75 + lift;
+    p2bPanel(context, id + "cube", vector(cubeX - 0.5, -1, cubeZ), vector(cubeX + 0.5, 0, cubeZ + 1),
+             "Smooth practice cube", color(0.39, 0.72, 0.35));
+    if (stage < 2)
+        return;
+
+    p2bPanel(context, id + "leftPost", vector(-4.7, 0.1, 0.25), vector(-4.3, 0.5, 3.75), "Left gantry post", frameColor);
+    p2bPanel(context, id + "rightPost", vector(4.3, 0.1, 0.25), vector(4.7, 0.5, 3.75), "Right gantry post", frameColor);
+    p2bPanel(context, id + "rail", vector(-4.7, 0.1, 3.75), vector(4.7, 0.5, 4.15), "Horizontal guide rail", frameColor);
+    if (stage < 3)
+        return;
+
+    const carriage = p2bBox(context, id + "carriage", vector(x - 0.32, -0.75, 3.62), vector(x + 0.32, 0.63, 4.28));
+    const railClearance = p2bBox(context, id + "railSlot", vector(x - 0.4, 0.08, 3.73), vector(x + 0.4, 0.52, 4.17));
+    const plungerClearance = p2bCylinder(context, id + "plungerBore", x, -0.5, 3.45, 4.4, 0.13);
+    opBoolean(context, id + "carriageSlots", { "targets" : carriage, "tools" : qUnion([railClearance, plungerClearance]),
+                "operationType" : BooleanOperationType.SUBTRACTION });
+    p2bName(context, carriage, "Sliding carriage", movingColor);
+
+    const padBase = 2.75 + lift;
+    const plunger = p2bCylinder(context, id + "plunger", x, -0.5, padBase + 0.08, padBase + 1.85, 0.11);
+    const knob = p2bCylinder(context, id + "knob", x, -0.5, padBase + 1.80, padBase + 1.94, 0.22);
+    opBoolean(context, id + "addKnob", { "tools" : qUnion([plunger, knob]), "operationType" : BooleanOperationType.UNION });
+    p2bName(context, plunger, "Vertical plunger and knob", color(0.72, 0.77, 0.79));
+    const pad = p2bCylinder(context, id + "pad", x, -0.5, padBase, padBase + 0.08, 0.30);
+    const recess = p2bCylinder(context, id + "padRecess", x, -0.5, padBase - 0.02, padBase + 0.04, 0.24);
+    opBoolean(context, id + "formCup", { "targets" : pad, "tools" : recess, "operationType" : BooleanOperationType.SUBTRACTION });
+    p2bName(context, pad, "Suction pad", color(0.18, 0.22, 0.24));
+}
+
+function p2Transfer(context is Context, id is Id, stage is number)
+{
+    p2TransferPose(context, id, stage, 0, 0);
+}
+
+annotation { "Feature Type Name" : "Part 2 Workshop", "Feature Name Template" : "#model" }
+export const partTwoWorkshop = defineFeature(function(context is Context, id is Id, definition is map)
+    precondition
+    {
+        annotation { "Name" : "Model" }
+        definition.model is PartTwoModel;
+        annotation { "Name" : "Stage", "Default" : PartTwoStage.LAYOUT }
+        definition.stage is PartTwoStage;
+        if (definition.model == PartTwoModel.TRANSFER && definition.stage == PartTwoStage.FINISH)
+        {
+            annotation { "Name" : "Transfer pose" }
+            definition.pose is PartTwoPose;
+        }
+    }
+    {
+        const stage = definition.stage == PartTwoStage.LAYOUT ? 1 : (definition.stage == PartTwoStage.BUILD ? 2 : 3);
+        if (definition.model == PartTwoModel.PYRAMID)
+            p2Pyramid(context, id + "model", stage);
+        if (definition.model == PartTwoModel.PAWN)
+            p2Pawn(context, id + "model", stage);
+        if (definition.model == PartTwoModel.RAIL)
+            p2Rail(context, id + "model", stage);
+        if (definition.model == PartTwoModel.CUP)
+            p2Cup(context, id + "model", stage);
+        if (definition.model == PartTwoModel.REDUCER)
+            p2Reducer(context, id + "model", stage);
+        if (definition.model == PartTwoModel.SHELF)
+            p2Shelf(context, id + "model", stage);
+        if (definition.model == PartTwoModel.TRANSFER)
+            p2TransferPose(context, id + "model", stage,
+                (definition.pose == PartTwoPose.CARRY || definition.pose == PartTwoPose.LAND) ? 6 : 0,
+                (definition.pose == PartTwoPose.LIFT || definition.pose == PartTwoPose.CARRY) ? 0.45 : 0);
+    });
+
+// These five dimensioned Front-view sketches are the starter for the
+// native Extrude lesson. The region coordinates use x and z in inches.
+function shelfLayoutSketch(context is Context, sketchId is Id, y is number, boxes is array)
+{
+    const sheet = newSketchOnPlane(context, sketchId, {
+        "sketchPlane" : plane(vector(0, y, 0) * inch, vector(0, -1, 0), vector(1, 0, 0)) });
+    for (var i = 0; i < size(boxes); i += 1)
+    {
+        const boardBounds = boxes[i];
+        skRectangle(sheet, "board" ~ i, { "firstCorner" : vector(boardBounds[0], boardBounds[1]) * inch,
+            "secondCorner" : vector(boardBounds[2], boardBounds[3]) * inch });
+    }
+    skSolve(sheet);
+}
+
+annotation { "Feature Type Name" : "Shelf panel outlines" }
+export const shelfPanelOutlines = defineFeature(function(context is Context, id is Id, definition is map)
+    precondition
+    {
+    }
+    {
+        shelfLayoutSketch(context, id + "sides", 0, [[0,0,0.75,47.5],[24,0,24.75,47.5]]);
+        shelfLayoutSketch(context, id + "ends", 0, [[0.75,1.75,24,2.5],[0.75,46.75,24,47.5]]);
+        shelfLayoutSketch(context, id + "back", 9.25, [[0,0,24.75,47.5]]);
+        shelfLayoutSketch(context, id + "plinth", 0.25, [[0.75,0,24,1.75]]);
+        shelfLayoutSketch(context, id + "shelves", 0, [[0.75,13,24,13.75],[0.75,24.25,24,25],[0.75,35.5,24,36.25]]);
+    });

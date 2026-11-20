@@ -1,90 +1,29 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Choose an Onshape project and follow its animated modeling tutorial in English, with optional Chinese translations.">
-  <title>Projects | Onshape Notes</title>
-  <link rel="stylesheet" href="language.css">
-  <script defer src="language.js"></script>
-  <script>
-    function openLegacyPyramidStep() {
-      if (/^#step-(0[1-9]|1[0-2])$/.test(location.hash)) {
-        location.replace('pyramid/' + location.search + location.hash);
-      }
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#142e29"><title>CADing Part 2 | Onshape Notes</title>
+<link rel="stylesheet" href="part2.css"><link rel="stylesheet" href="language.css">
+<script defer src="language.js"></script><script>
+  function openLegacyPyramidStep() {
+    if (/^#step-(0[1-9]|1[0-2])$/.test(location.hash)) {
+      location.replace('pyramid/' + location.search + location.hash);
     }
-    openLegacyPyramidStep();
-    window.addEventListener('hashchange', openLegacyPyramidStep);
-  </script>
-  <style>
-    :root {
-      color-scheme: light;
-      font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
-      color: #18363a;
-      background: #f4f7f5;
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; }
-    .wrap { width: min(100% - 2.5rem, 63rem); margin-inline: auto; }
-    .mast { padding-block: 1.15rem; border-bottom: 1px solid #cbd9d5; background: #fff; }
-    .mast-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem 1.25rem; }
-    .brand { margin: 0; font-size: 1.05rem; font-weight: 700; letter-spacing: -.025em; }
-    .mast-nav { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem .8rem; }
-    .toolkit { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-height: 44px; padding: .5rem .95rem; border-radius: .45rem; background: #125e58; color: #fff; text-decoration: none; font-size: .95rem; font-weight: 600; }
-    .toolkit .zh { color: inherit; }
-    .toolkit:hover { background: #0b4946; }
-    .toolkit:focus-visible { outline: 3px solid #167671; outline-offset: 3px; }
-    main { padding-block: clamp(2rem, 6vw, 4.5rem); }
-    h1 { margin: 0 0 clamp(1.4rem, 3vw, 2.1rem); font-size: clamp(2.4rem, 6vw, 4rem); letter-spacing: -.045em; line-height: 1.1; }
-    h1 .zh { margin-top: .12em; color: #536c6e; font-size: .54em; letter-spacing: 0; }
-    .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2.7vw, 1.75rem); }
-    .project { min-width: 0; display: block; border: 1px solid #c6d5d1; border-radius: .65rem; overflow: hidden; background: #fff; color: inherit; text-decoration: none; }
-    .project:hover, .project:focus-visible { border-color: #28726c; }
-    .project:hover h2, .project:focus-visible h2 { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .15em; }
-    .project:focus-visible { outline: 3px solid #167671; outline-offset: 4px; }
-    .project img { display: block; width: 100%; height: auto; }
-    .card-copy { padding: 1.2rem clamp(1.15rem, 2.5vw, 1.6rem) 1.35rem; border-top: 1px solid #e1e9e5; }
-    h2 { margin: 0; font-size: clamp(1.35rem, 3vw, 1.8rem); line-height: 1.3; letter-spacing: -.03em; }
-    h2 .zh { margin-top: .15em; font-size: .77em; font-weight: 600; letter-spacing: 0; }
-    .skills { margin: .55rem 0 .18rem; color: #345a5c; font-size: 1rem; line-height: 1.5; }
-    .steps { margin: .65rem 0 0; color: #526b6e; font-size: .9rem; }
-    @media (max-width: 620px) {
-      .wrap { width: min(100% - 2rem, 28rem); }
-      .projects { grid-template-columns: 1fr; }
-      .card-copy { padding: 1rem 1.15rem 1.2rem; }
-    }
-  </style>
-</head>
-<body>
-  <header class="mast">
-    <div class="wrap mast-inner">
-      <p class="brand">Onshape Notes</p>
-      <nav class="mast-nav" aria-label="Site navigation">
-        <a class="toolkit" href="student-toolkit/">Student Toolkit<span class="zh" lang="zh-CN">学生工具包</span></a>
-        <button id="bilingual-toggle" type="button" aria-pressed="false" hidden><span class="track" aria-hidden="true"></span><span>Bilingual · <span lang="zh-CN">双语</span></span></button>
-      </nav>
-    </div>
-  </header>
-  <main class="wrap">
-    <h1>Projects<span class="zh" lang="zh-CN">项目目录</span></h1>
-    <nav class="projects" aria-label="Choose a project">
-      <a class="project" href="pyramid/">
-        <img src="previews/pyramid.webp" width="640" height="350" alt="">
-        <div class="card-copy">
-          <h2>Pyramid<span class="zh" lang="zh-CN">四棱锥</span></h2>
-          <p class="skills">Loft<span class="zh" lang="zh-CN">放样</span></p>
-          <p class="steps">12 steps<span class="zh" lang="zh-CN">12 步</span></p>
-        </div>
-      </a>
-      <a class="project" href="traffic-cone/">
-        <img src="previews/traffic-cone.webp" width="640" height="350" alt="">
-        <div class="card-copy">
-          <h2>Traffic Cone<span class="zh" lang="zh-CN">交通锥</span></h2>
-          <p class="skills">Loft, Shell, Revolve<span class="zh" lang="zh-CN">放样、抽壳、旋转</span></p>
-          <p class="steps">56 steps<span class="zh" lang="zh-CN">56 步</span></p>
-        </div>
-      </a>
-    </nav>
-  </main>
-</body>
-</html>
+  }
+  openLegacyPyramidStep();
+  window.addEventListener('hashchange', openLegacyPyramidStep);
+</script></head>
+<body><header class="mast"><div class="wrap"><a href="./" class="brand">Onshape Notes<span class="zh" lang="zh-CN">Onshape 笔记</span></a>
+<nav class="utility" aria-label="Site navigation"><a href="student-toolkit/">Student Toolkit<span class="zh" lang="zh-CN">学生工具包</span></a><button id="bilingual-toggle" type="button" aria-pressed="false" hidden><span class="track" aria-hidden="true"></span><span>Bilingual · <span lang="zh-CN">双语</span></span></button></nav></div></header>
+<main class="wrap"><header class="heading"><h1>CADing Part 2<span class="zh" lang="zh-CN">CAD 建模 第二部分</span></h1>
+<p class="intro">Choose a project to open its step-by-step Onshape guide.<span class="zh" lang="zh-CN">选择一个项目，打开对应的 Onshape 分步教程。</span></p>
+<details class="workshop-setup"><summary>Set up Part 2 Workshop in your Onshape document<span class="zh" lang="zh-CN">在自己的 Onshape 文档中添加 Part 2 Workshop</span></summary><ol><li><a download href="Part%202%20Workshop.fs.txt">Download the workshop FeatureScript<span class="zh" lang="zh-CN">下载 Workshop 的 FeatureScript 源码</span></a></li><li>Open the downloaded text file and copy its entire contents. In your Onshape practice document, click the + at the bottom left, then click Create Feature Studio.<span class="zh" lang="zh-CN">打开下载的文本文件，复制全部内容。在自己的 Onshape 练习文档左下角单击 +，再单击 Create Feature Studio。</span></li><li>Click inside the Feature Studio editor, select all the starter code, and paste the copied text. Click Commit. Open a Part Studio in the same document and click Custom features in this workspace at the right end of the toolbar. Part 2 Workshop should appear in the list.<span class="zh" lang="zh-CN">单击 Feature Studio 编辑区，全选初始代码，粘贴复制的文本，再单击 Commit。打开同一文档中的 Part Studio，单击工具栏右端的 Custom features in this workspace，列表中应出现 Part 2 Workshop。</span></li></ol></details></header>
+<section class="directory"><h2 class="section-title">Course projects<span class="zh" lang="zh-CN">课程项目</span></h2><div class="grid"><a class="card" href="p2-pyramid/"><img src="workshop-media/pyramid/model.png" width="680" height="358" alt="" loading="lazy"><div class="card-copy">
+<h3>Pyramid<span class="zh" lang="zh-CN">四棱锥</span></h3><p class="meta">Pages 4–8 · 20 steps<span class="zh" lang="zh-CN">第 4–8 页 · 20 步</span></p></div></a><a class="card" href="p2-pawn/"><img src="workshop-media/pawn/model.png" width="680" height="358" alt="" loading="lazy"><div class="card-copy">
+<h3>Pawn<span class="zh" lang="zh-CN">国际象棋兵</span></h3><p class="meta">Pages 9–13 · 16 steps<span class="zh" lang="zh-CN">第 9–13 页 · 16 步</span></p></div></a><a class="card" href="p2-pool-rail/"><img src="workshop-media/pool-rail/model.png" width="680" height="358" alt="" loading="lazy"><div class="card-copy">
+<h3>Pool Rail<span class="zh" lang="zh-CN">泳池扶手</span></h3><p class="meta">Pages 14–18 · 16 steps<span class="zh" lang="zh-CN">第 14–18 页 · 16 步</span></p></div></a><a class="card" href="p2-coffee-cup/"><img src="workshop-media/coffee-cup/model.png" width="680" height="358" alt="" loading="lazy"><div class="card-copy">
+<h3>Coffee Cup<span class="zh" lang="zh-CN">咖啡杯</span></h3><p class="meta">Pages 19–26 · 17 steps<span class="zh" lang="zh-CN">第 19–26 页 · 17 步</span></p></div></a><a class="card" href="p2-pipe-reducer/"><img src="workshop-media/pipe-reducer/model.png" width="680" height="358" alt="" loading="lazy"><div class="card-copy">
+<h3>Pipe Reducer<span class="zh" lang="zh-CN">异径管</span></h3><p class="meta">Pages 27–33 · 26 steps<span class="zh" lang="zh-CN">第 27–33 页 · 26 步</span></p></div></a><a class="card" href="p2-bookshelf/"><img src="workshop-media/bookshelf/model.png" width="680" height="358" alt="" loading="lazy"><div class="card-copy">
+<h3>Bookshelf<span class="zh" lang="zh-CN">书架</span></h3><p class="meta">Pages 34–36 · 29 steps<span class="zh" lang="zh-CN">第 34–36 页 · 29 步</span></p></div></a><a class="card" href="p2-cube-transfer/"><img src="workshop-media/cube-transfer/model.png" width="680" height="358" alt="" loading="lazy"><div class="card-copy">
+<h3>Cube Transfer<span class="zh" lang="zh-CN">方块搬运机构</span></h3><p class="meta">Pages 37–39 · 34 steps<span class="zh" lang="zh-CN">第 37–39 页 · 34 步</span></p></div></a></div></section>
+<section class="directory"><h2 class="section-title">Earlier lessons<span class="zh" lang="zh-CN">以往课程</span></h2><div class="grid"><a class="card" href="pyramid/"><img src="previews/pyramid.webp" width="680" height="358" alt="" loading="lazy"><div class="card-copy">
+<h3>Pyramid Loft practice<span class="zh" lang="zh-CN">四棱锥放样练习</span></h3><p class="meta">12 steps<span class="zh" lang="zh-CN">12 步</span></p></div></a><a class="card" href="traffic-cone/"><img src="previews/traffic-cone.webp" width="680" height="358" alt="" loading="lazy"><div class="card-copy">
+<h3>Traffic Cone<span class="zh" lang="zh-CN">交通锥</span></h3><p class="meta">56 steps<span class="zh" lang="zh-CN">56 步</span></p></div></a></div></section></main></body></html>
